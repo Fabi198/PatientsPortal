@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:drawablePadding="12dp"
+                android:gravity="center_vertical"
+                android:text="@string/tel_fonos"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/baseline_call_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/btnEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:text="@string/cambiar"
+                android:textColor="@color/blue"
+                app:drawableStartCompat="@drawable/baseline_edit_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clReadingView"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/btnEdit">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="240dp" />
+
+                <TextView
+                    android:id="@+id/tvPhoneHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/tel_fono_fijo"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvDisplayedPhoneHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    app:layout_constraintBottom_toBottomOf="@id/tvPhoneHome"
+                    app:layout_constraintStart_toEndOf="@id/guideline3"
+                    app:layout_constraintTop_toTopOf="@id/tvPhoneHome" />
+
+                <ImageView
+                    android:id="@+id/separatorPhoneHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/tvPhoneHome"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvPhoneHomeAlternative"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/tel_fono_fijo_alternativo"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorPhoneHome" />
+
+                <TextView
+                    android:id="@+id/tvDisplayedPhoneHomeAlternative"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    app:layout_constraintBottom_toBottomOf="@id/tvPhoneHomeAlternative"
+                    app:layout_constraintStart_toEndOf="@id/guideline3"
+                    app:layout_constraintTop_toTopOf="@id/tvPhoneHomeAlternative" />
+
+                <ImageView
+                    android:id="@+id/separatorPhoneHomeAlternative"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/tvPhoneHomeAlternative"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvPhoneParticular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/particular"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorPhoneHomeAlternative" />
+
+                <TextView
+                    android:id="@+id/tvDisplayedPhoneParticular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    app:layout_constraintBottom_toBottomOf="@id/tvPhoneParticular"
+                    app:layout_constraintStart_toEndOf="@id/guideline3"
+                    app:layout_constraintTop_toTopOf="@id/tvPhoneParticular" />
+
+                <ImageView
+                    android:id="@+id/separatorPhoneParticular"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/tvPhoneParticular"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvCellphone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/celular"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorPhoneParticular" />
+
+                <TextView
+                    android:id="@+id/tvDisplayedCellPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    app:layout_constraintBottom_toBottomOf="@id/tvCellphone"
+                    app:layout_constraintStart_toEndOf="@id/guideline3"
+                    app:layout_constraintTop_toTopOf="@id/tvCellphone" />
+
+                <ImageView
+                    android:id="@+id/separatorCellphone"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/tvCellphone"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvCompany"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/compa_ia"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorCellphone" />
+
+                <TextView
+                    android:id="@+id/tvDisplayedCompany"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    app:layout_constraintBottom_toBottomOf="@id/tvCompany"
+                    app:layout_constraintStart_toEndOf="@id/guideline3"
+                    app:layout_constraintTop_toTopOf="@id/tvCompany" />
+
+                <ImageView
+                    android:id="@+id/separatorCompany"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/tvCompany"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvFax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/fax"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorCompany" />
+
+                <TextView
+                    android:id="@+id/tvDisplayedFax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    app:layout_constraintBottom_toBottomOf="@id/tvFax"
+                    app:layout_constraintStart_toEndOf="@id/guideline3"
+                    app:layout_constraintTop_toTopOf="@id/tvFax" />
+
+                <ImageView
+                    android:id="@+id/separatorFax"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/tvFax"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvPhoneWork"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/laboral"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorFax" />
+
+                <TextView
+                    android:id="@+id/tvDisplayedPhoneWork"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    app:layout_constraintBottom_toBottomOf="@id/tvPhoneWork"
+                    app:layout_constraintStart_toEndOf="@id/guideline3"
+                    app:layout_constraintTop_toTopOf="@id/tvPhoneWork" />
+
+                <ImageView
+                    android:id="@+id/separatorPhoneWork"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/tvPhoneWork"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:ignore="ImageContrastCheck" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clWritingView"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/btnEdit">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="240dp" />
+
+                <TextView
+                    android:id="@+id/tvPhoneHomeW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/tel_fono_fijo"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="200dp"
+                    app:strokeWidth="1dp"
+                    android:id="@+id/cvPhoneHomeW"
+                    app:strokeColor="@color/grayLight"
+                    app:layout_constraintBottom_toBottomOf="@id/tvPhoneHomeW"
+                    app:layout_constraintStart_toEndOf="@id/guideline4"
+                    app:layout_constraintTop_toTopOf="@id/tvPhoneHomeW"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/tvEditPhoneHome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:layout_marginStart="4dp"
+                        android:autofillHints="name"
+                        android:textAllCaps="true"
+                        android:textColor="@color/blue"
+                        tools:ignore="LabelFor" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <ImageView
+                    android:id="@+id/separatorPhoneHomeW"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/cvPhoneHomeW"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvPhoneHomeAlternativeW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/tel_fono_fijo_alternativo"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorPhoneHomeW" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="200dp"
+                    app:strokeWidth="1dp"
+                    android:id="@+id/cvEditPhoneHomeAlternativeW"
+                    app:strokeColor="@color/grayLight"
+                    app:layout_constraintBottom_toBottomOf="@id/tvPhoneHomeAlternativeW"
+                    app:layout_constraintStart_toEndOf="@id/guideline4"
+                    app:layout_constraintTop_toTopOf="@id/tvPhoneHomeAlternativeW"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/tvEditPhoneHomeAlternative"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:layout_marginStart="4dp"
+                        android:autofillHints="name"
+                        android:textAllCaps="true"
+                        android:textColor="@color/blue"
+                        tools:ignore="LabelFor" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <ImageView
+                    android:id="@+id/separatorPhoneHomeAlternativeW"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/cvEditPhoneHomeAlternativeW"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvPhoneParticularW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/particular"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorPhoneHomeAlternativeW" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="200dp"
+                    app:strokeWidth="1dp"
+                    android:id="@+id/cvEditPhoneParticularW"
+                    app:strokeColor="@color/grayLight"
+                    app:layout_constraintBottom_toBottomOf="@id/tvPhoneParticularW"
+                    app:layout_constraintStart_toEndOf="@id/guideline4"
+                    app:layout_constraintTop_toTopOf="@id/tvPhoneParticularW"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/tvEditPhoneParticular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:layout_marginStart="4dp"
+                        android:autofillHints="name"
+                        android:textAllCaps="true"
+                        android:textColor="@color/blue"
+                        tools:ignore="LabelFor" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <ImageView
+                    android:id="@+id/separatorPhoneParticularW"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/cvEditPhoneParticularW"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvCellphoneW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/celular"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorPhoneParticularW" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="200dp"
+                    app:strokeWidth="1dp"
+                    android:id="@+id/cvEditCellphoneW"
+                    app:strokeColor="@color/grayLight"
+                    app:layout_constraintBottom_toBottomOf="@id/tvCellphoneW"
+                    app:layout_constraintStart_toEndOf="@id/guideline4"
+                    app:layout_constraintTop_toTopOf="@id/tvCellphoneW"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/tvEditCellphone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:layout_marginStart="4dp"
+                        android:autofillHints="name"
+                        android:textAllCaps="true"
+                        android:textColor="@color/blue"
+                        tools:ignore="LabelFor" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    app:layout_constraintStart_toStartOf="@id/cvEditCellphoneW"
+                    app:layout_constraintTop_toBottomOf="@id/cvEditCellphoneW"
+                    android:id="@+id/tvHintCellphoneW"
+                    android:textSize="11sp"
+                    android:layout_margin="2dp"
+                    android:hint="@string/cod_area_sin_0_n_mero_sin_15_ni_11"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:id="@+id/separatorCellphoneW"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/tvHintCellphoneW"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvCompanyW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/compa_ia"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorCellphoneW" />
+
+                <Spinner
+                    android:id="@+id/tvSpinnerCompany"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    app:layout_constraintBottom_toBottomOf="@id/tvCompanyW"
+                    app:layout_constraintStart_toEndOf="@id/guideline4"
+                    app:layout_constraintTop_toTopOf="@id/tvCompanyW" />
+
+                <ImageView
+                    android:id="@+id/separatorCompanyW"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/tvSpinnerCompany"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvFaxW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/fax"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorCompanyW" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="200dp"
+                    app:strokeWidth="1dp"
+                    android:id="@+id/cvEditFaxW"
+                    app:strokeColor="@color/grayLight"
+                    app:layout_constraintBottom_toBottomOf="@id/tvFaxW"
+                    app:layout_constraintStart_toEndOf="@id/guideline4"
+                    app:layout_constraintTop_toTopOf="@id/tvFaxW"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/tvEditFax"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:layout_marginStart="4dp"
+                        android:autofillHints="name"
+                        android:textAllCaps="true"
+                        android:textColor="@color/blue"
+                        tools:ignore="LabelFor" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <ImageView
+                    android:id="@+id/separatorFaxW"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/cvEditFaxW"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvPhoneWorkW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/laboral"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorFaxW" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="200dp"
+                    app:strokeWidth="1dp"
+                    android:id="@+id/cvEditPhoneWorkW"
+                    app:strokeColor="@color/grayLight"
+                    app:layout_constraintBottom_toBottomOf="@id/tvPhoneWorkW"
+                    app:layout_constraintStart_toEndOf="@id/guideline4"
+                    app:layout_constraintTop_toTopOf="@id/tvPhoneWorkW"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/tv_edit_phone_work"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:layout_marginStart="4dp"
+                        android:autofillHints="name"
+                        android:textAllCaps="true"
+                        android:textColor="@color/blue"
+                        tools:ignore="LabelFor" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <ImageView
+                    android:id="@+id/separatorPhoneWorkW"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/cvEditPhoneWorkW"
+                    tools:ignore="ImageContrastCheck" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:id="@+id/miniCards"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_margin="12dp"
+                    app:layout_constraintTop_toBottomOf="@id/separatorPhoneWorkW"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:orientation="horizontal"
+                    android:layout_height="48dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:id="@+id/btnCancel"
+                        app:cardBackgroundColor="@color/white"
+                        app:strokeColor="@color/gray"
+                        android:layout_margin="4dp"
+                        app:strokeWidth="0.4dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="@string/cancelar"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginStart="48dp"
+                            android:layout_marginEnd="48dp"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/blue"
+                            android:layout_height="wrap_content" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        app:strokeColor="@color/gray"
+                        app:cardBackgroundColor="@color/blue"
+                        android:id="@+id/btnSave"
+                        android:layout_margin="4dp"
+                        app:strokeWidth="0.4dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="@string/guardar"
+                            android:textStyle="bold"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginStart="48dp"
+                            android:layout_marginEnd="48dp"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/white"
+                            android:layout_height="wrap_content"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

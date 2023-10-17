@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/clMain"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragmentsBottomMenu.ProfileFragment">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardBackgroundColor="@color/blue"
+            android:elevation="10dp"
+            android:visibility="gone"
+            android:id="@+id/miniProfileView"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:elevation="20dp"
+                    android:layout_margin="12dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:civ_border_width="1dp"
+                    app:civ_border_color="#FF000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/profile_image"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_margin="12dp"
+                    android:textStyle="bold"
+                    android:id="@+id/tvName"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tvName"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="12dp"
+                    android:textColor="@color/white"
+                    android:id="@+id/tvIdNumber"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tvIdNumber"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="12dp"
+                    android:textColor="@color/white"
+                    android:id="@+id/tvMail"
+                    android:layout_height="wrap_content"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMail"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_margin="20dp"
+                    app:cardBackgroundColor="@color/blue"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="1dp"
+                    android:id="@+id/btnSeeFullProfile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="@string/ver_mi_perfil"
+                        android:textColor="@color/white"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="4dp"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp"
+                        app:drawableStartCompat="@drawable/baseline_person_24" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:id="@+id/fullProfileView"
+            android:visibility="gone"
+            android:elevation="8dp"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@color/blue"
+                android:id="@+id/toolbarFullProfileView"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:background="@null"
+                    android:contentDescription="@string/volver_atras"
+                    android:id="@+id/backToMiniView"
+                    android:src="@drawable/baseline_arrow_back_ios_24"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    android:text="@string/mi_perfil"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:paddingBottom="60dp"
+                android:layout_marginTop="60dp"
+                app:layout_constraintTop_toBottomOf="@id/toolbarFullProfileView"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_margin="20dp"
+                        android:id="@+id/cvPhoto"
+                        app:cardElevation="10dp"
+                        android:layout_height="wrap_content">
+
+                        <include
+                            android:layout_width="match_parent"
+                            android:id="@+id/itemPhoto"
+                            layout="@layout/profile_card_views_photo"
+                            android:layout_height="wrap_content"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        app:layout_constraintTop_toBottomOf="@id/cvPhoto"
+                        android:id="@+id/cvPersonalData"
+                        android:layout_margin="20dp"
+                        app:cardElevation="10dp"
+                        android:layout_height="wrap_content">
+
+                        <include
+                            android:layout_width="match_parent"
+                            android:id="@+id/itemPersonalData"
+                            layout="@layout/profile_card_views_personal_data"
+                            android:layout_height="wrap_content"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        app:layout_constraintTop_toBottomOf="@id/cvPersonalData"
+                        android:id="@+id/cvNationality"
+                        android:layout_margin="20dp"
+                        app:cardElevation="10dp"
+                        android:layout_height="wrap_content">
+
+                        <include
+                            android:layout_width="match_parent"
+                            android:id="@+id/itemNationality"
+                            layout="@layout/profile_card_views_nationality"
+                            android:layout_height="wrap_content"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        app:layout_constraintTop_toBottomOf="@id/cvNationality"
+                        android:id="@+id/cvAddress"
+                        android:layout_margin="20dp"
+                        app:cardElevation="10dp"
+                        android:layout_height="wrap_content">
+
+                        <include
+                            android:layout_width="match_parent"
+                            android:id="@+id/itemAddress"
+                            layout="@layout/profile_card_views_address"
+                            android:layout_height="wrap_content"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        app:layout_constraintTop_toBottomOf="@id/cvAddress"
+                        android:id="@+id/cvPhone"
+                        android:layout_margin="20dp"
+                        app:cardElevation="10dp"
+                        android:layout_height="wrap_content">
+
+                        <include
+                            android:layout_width="match_parent"
+                            android:id="@+id/itemPhone"
+                            layout="@layout/profile_card_views_phone"
+                            android:layout_height="wrap_content"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        app:layout_constraintTop_toBottomOf="@id/cvPhone"
+                        android:id="@+id/cvMail"
+                        android:layout_margin="20dp"
+                        app:cardElevation="10dp"
+                        android:layout_height="wrap_content">
+
+                        <include
+                            android:layout_width="match_parent"
+                            android:id="@+id/itemMail"
+                            layout="@layout/profile_card_views_mail"
+                            android:layout_height="wrap_content"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        app:layout_constraintTop_toBottomOf="@id/cvMail"
+                        android:id="@+id/cvBillAddress"
+                        android:layout_margin="20dp"
+                        app:cardElevation="10dp"
+                        android:layout_height="wrap_content">
+
+                        <include
+                            android:layout_width="match_parent"
+                            android:id="@+id/itemBillAddress"
+                            layout="@layout/profile_card_views_bill_address"
+                            android:layout_height="wrap_content"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        app:layout_constraintTop_toBottomOf="@id/cvBillAddress"
+                        android:id="@+id/cvEducation"
+                        android:layout_margin="20dp"
+                        app:cardElevation="10dp"
+                        android:layout_height="wrap_content">
+
+                        <include
+                            android:layout_width="match_parent"
+                            android:id="@+id/itemEducation"
+                            layout="@layout/profile_card_views_education"
+                            android:layout_height="wrap_content"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        app:layout_constraintTop_toBottomOf="@id/cvEducation"
+                        android:id="@+id/cvSocialAspect"
+                        android:layout_margin="20dp"
+                        app:cardElevation="10dp"
+                        android:layout_height="wrap_content">
+
+                        <include
+                            android:layout_width="match_parent"
+                            android:id="@+id/itemSocialAspect"
+                            layout="@layout/profile_card_views_social_aspect"
+                            android:layout_height="wrap_content"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        app:layout_constraintTop_toBottomOf="@id/cvSocialAspect"
+                        android:id="@+id/cvCulturalAspect"
+                        android:layout_margin="20dp"
+                        app:cardElevation="10dp"
+                        android:layout_height="wrap_content">
+
+                        <include
+                            android:layout_width="match_parent"
+                            android:id="@+id/itemCulturalAspect"
+                            layout="@layout/profile_card_views_cultural_aspect"
+                            android:layout_height="wrap_content"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        app:layout_constraintTop_toBottomOf="@id/cvCulturalAspect"
+                        android:id="@+id/cvContactPerson"
+                        android:layout_margin="20dp"
+                        app:cardElevation="10dp"
+                        android:layout_height="wrap_content">
+
+                        <include
+                            android:layout_width="match_parent"
+                            android:id="@+id/itemContactPerson"
+                            layout="@layout/profile_card_views_contact_person"
+                            android:layout_height="wrap_content"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        app:layout_constraintTop_toBottomOf="@id/cvContactPerson"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:id="@+id/cvDisability"
+                        android:layout_margin="20dp"
+                        app:cardElevation="10dp"
+                        android:layout_height="wrap_content">
+
+                        <include
+                            android:layout_width="match_parent"
+                            android:id="@+id/itemDisability"
+                            layout="@layout/profile_card_views_disability"
+                            android:layout_height="wrap_content"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_big_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:elevation="20dp"
+            android:visibility="gone"
+            android:src="@drawable/profile_img_minerva"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            app:civ_border_width="1dp"
+            app:civ_border_color="#FF000000"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:contentDescription="@string/todo"
+            android:background="@color/gray"
+            android:alpha="0.5"
+            android:id="@+id/profile_big_image_background"
+            android:visibility="gone"
+            android:elevation="18dp"
+            android:layout_height="match_parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

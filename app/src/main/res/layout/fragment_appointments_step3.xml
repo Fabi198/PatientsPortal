@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/rlMain"
+    android:layout_height="match_parent"
+    tools:context=".fragmentsDrawerMenu.appointmentsSteps.AppointmentsStep3">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarSearchAndList"
+        android:layout_width="match_parent"
+        android:layout_gravity="top"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"
+        android:background="@color/blue">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:gravity="center_vertical"
+            android:id="@+id/btnBack"
+            android:textColor="@color/white"
+            app:drawableStartCompat="@drawable/baseline_arrow_back_ios_24" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="12dp"
+            android:text="@string/paso_3_5"
+            android:textColor="@color/white" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/toolbarSearchAndList"
+        android:layout_marginTop="24dp"
+        android:id="@+id/llFilters"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="80"
+            android:layout_marginStart="12dp"
+            android:textColor="@color/blue"
+            android:layout_gravity="center_vertical"
+            android:textStyle="bold"
+            android:id="@+id/tvTitle"
+            android:textSize="18sp"
+            android:text="@string/seleccion_un_profesional_y_donde_quer_s_atenderte"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_weight="20"
+            android:layout_margin="12dp"
+            android:id="@+id/cvFilters"
+            android:layout_gravity="center_vertical"
+            app:cardBackgroundColor="@color/white"
+            app:strokeColor="@color/blue"
+            app:strokeWidth="1dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/blue"
+                android:text="@string/filtros"
+                android:gravity="center_vertical"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:drawableEndCompat="@drawable/baseline_keyboard_arrow_down_24" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/llFilters"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:background="@color/black"
+        android:contentDescription="@string/todo"
+        android:src="@android:drawable/divider_horizontal_bright"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/tvSearchFrom"
+        android:layout_below="@id/separator"
+        android:layout_margin="12dp"
+        android:textColor="@color/black"
+        android:text="@string/apellido_del_profesional"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="4dp"
+        android:id="@+id/cvSearch"
+        app:cardElevation="10dp"
+        android:layout_below="@id/tvSearchFrom"
+        android:layout_height="wrap_content">
+
+        <AutoCompleteTextView
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:autofillHints="false"
+            android:background="@null"
+            android:drawableStart="@drawable/baseline_search_24"
+            android:gravity="center_vertical"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/btnMyDoctors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cvSearch"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/elegir_de_mis_m_dicos"
+        android:textColor="@color/blue" />
+
+    <TextView
+        android:id="@+id/tvAttentionPlaces"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnMyDoctors"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        android:alpha="0.5"
+        android:text="@string/lugares_de_atenci_n"
+        android:textColor="@color/black"
+        tools:ignore="TextContrastCheck" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:alpha="0.5"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="10dp"
+        app:strokeWidth="0.5dp"
+        app:strokeColor="@color/grayLight"
+        android:id="@+id/cvAttentionPlaces"
+        android:layout_below="@id/tvAttentionPlaces"
+        android:layout_height="wrap_content">
+
+        <Spinner
+            android:id="@+id/spinnerAttentionPlaces"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:visibility="gone"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/tvMultiPlacesSelected"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="12dp"
+            android:drawablePadding="12dp"
+            android:hint="@string/ejemplo_hospital_central"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            app:drawableEndCompat="@drawable/spinner_arrow"
+            tools:ignore="TextContrastCheck" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/btnMultiPlaces"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cvAttentionPlaces"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        android:visibility="gone"
+        android:text="@string/elegir_m_s_de_un_hospital"
+        android:textColor="@color/blue" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:id="@+id/cvContainer"
+        app:cardElevation="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        app:strokeWidth="0.5dp"
+        app:strokeColor="@color/grayLight"
+        app:cardBackgroundColor="@color/white"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnNextStep"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="24dp"
+            android:alpha="0.5"
+            app:cardBackgroundColor="@color/blue">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="12dp"
+                android:text="@string/continuar"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

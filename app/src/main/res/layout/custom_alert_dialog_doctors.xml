@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:id="@+id/toolbarMyDoctorsListWithCheckbox"
+                android:background="@color/graySuperLight"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/baseline_clear_24"
+                    android:id="@+id/btnClose"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:text="@string/mis_m_dicos"
+                    android:layout_height="wrap_content"/>
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <TextView
+                android:id="@+id/tvChooseMyDoctor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_below="@id/toolbarMyDoctorsListWithCheckbox"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="12dp"
+                android:text="@string/elegir_mi_m_dico" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="vertical"
+                tools:itemCount="11"
+                android:visibility="gone"
+                android:layout_below="@id/tvChooseMyDoctor"
+                android:layout_above="@id/cvContainerBottomCards"
+                android:id="@+id/rvSpinnerItems"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_doctor_with_checkbox"
+                android:layout_height="match_parent"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:id="@+id/cvContainerBottomCards"
+                android:layout_alignParentBottom="true"
+                app:cardBackgroundColor="@color/white"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        app:cardBackgroundColor="@color/white"
+                        android:layout_marginEnd="6dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginBottom="24dp"
+                        android:id="@+id/btnCleanSelection"
+                        android:layout_gravity="center_vertical"
+                        app:strokeColor="@color/blue"
+                        app:strokeWidth="1dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:textSize="18sp"
+                            android:textColor="@color/blue"
+                            android:layout_marginStart="60dp"
+                            android:layout_marginEnd="60dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/limpiar"
+                            android:layout_height="wrap_content"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        app:cardBackgroundColor="@color/blue"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginBottom="24dp"
+                        android:id="@+id/btnSetDoctor"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:textSize="18sp"
+                            android:textColor="@color/white"
+                            android:layout_marginStart="60dp"
+                            android:layout_marginEnd="60dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/aplicar"
+                            android:layout_height="wrap_content"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:indeterminate="true"
+                android:indeterminateTint="#14769D"
+                android:id="@+id/pbMyDoctorsListWithCheckbox"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/tvNoRegisters"
+                android:layout_centerInParent="true"
+                android:textColor="@color/blue"
+                android:textSize="18sp"
+                android:visibility="gone"
+                android:textStyle="bold"
+                android:text="@string/no_hay_registros"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

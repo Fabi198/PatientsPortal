@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:id="@+id/toolbarNewCreditCard"
+        android:background="@color/blue"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/baseline_clear_24"
+            android:id="@+id/btnClose"
+            android:layout_height="wrap_content"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:text="@string/agregar_nueva_tarjeta_de_cr_dito"
+            android:layout_height="wrap_content"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp"
+        android:id="@+id/llCards"
+        android:layout_below="@id/toolbarNewCreditCard"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:src="@drawable/card_credit_visa_bw"
+            android:scaleType="fitCenter"
+            android:background="@null"
+            android:id="@+id/btnVISA"
+            android:layout_weight="0.3"
+            android:layout_height="110dp"
+            android:contentDescription="@string/nueva_tarjeta_visa" />
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:src="@drawable/card_credit_master_bw"
+            android:scaleType="fitCenter"
+            android:background="@null"
+            android:id="@+id/btnMaster"
+            android:layout_weight="0.3"
+            android:layout_height="110dp"
+            android:contentDescription="@string/nueva_tarjeta_mastercard"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:id="@+id/btnAmex"
+            android:src="@drawable/card_credit_american_bw"
+            android:scaleType="fitCenter"
+            android:background="@null"
+            android:layout_height="110dp"
+            android:contentDescription="@string/nueva_tarjeta_american_express"/>
+
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/cv_card_info_view"
+        android:visibility="invisible"
+        android:layout_below="@id/llCards"
+        android:layout_above="@id/cvContainer"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="24dp"
+            android:id="@+id/tvCardOwner"
+            android:text="@string/titular_de_la_tarjeta"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:id="@+id/etCardOwner"
+            android:inputType="textPersonName"
+            app:layout_constraintTop_toBottomOf="@id/tvCardOwner"
+            android:hint="@string/como_figura_en_la_tarjeta"
+            android:layout_height="wrap_content"
+            android:autofillHints="username"
+            tools:ignore="VisualLintTextFieldSize" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="24dp"
+            android:id="@+id/tvCardNumber"
+            android:text="@string/n_mero_de_tarjeta"
+            app:layout_constraintTop_toBottomOf="@id/etCardOwner"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:id="@+id/etCardNumber"
+            android:maxLength="16"
+            android:inputType="number"
+            app:layout_constraintTop_toBottomOf="@id/tvCardNumber"
+            android:hint="@string/sin_espacios_ni_guiones"
+            android:layout_height="wrap_content"
+            android:autofillHints="creditCardNumber"
+            tools:ignore="VisualLintTextFieldSize" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/llExpirationAndCVV"
+            app:layout_constraintTop_toBottomOf="@id/etCardNumber"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.7"
+                android:orientation="vertical"
+                android:id="@+id/llCardExpiration"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="24dp"
+                    android:id="@+id/tvCardExpiration"
+                    android:text="@string/vencimiento"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:id="@+id/etCardExpiration"
+                    android:hint="@string/mm_yy"
+                    android:maxLength="5"
+                    android:inputType="number"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="creditCardExpirationDate"
+                    tools:ignore="VisualLintTextFieldSize" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:orientation="vertical"
+                android:id="@+id/llCardCVV"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="24dp"
+                    android:id="@+id/tvCardCVV"
+                    android:text="@string/cvv"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:id="@+id/etCardCVV"
+                    android:maxLength="3"
+                    android:inputType="number"
+                    android:hint="@string/n_meros"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="creditCardSecurityCode"
+                    tools:ignore="VisualLintTextFieldSize" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/llDocument"
+            app:layout_constraintTop_toBottomOf="@id/llExpirationAndCVV"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:orientation="vertical"
+                android:id="@+id/llDocType"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="24dp"
+                    android:id="@+id/tvDocType"
+                    android:text="@string/tipo_doc"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:id="@+id/etDocType"
+                    android:hint="@string/dni"
+                    android:enabled="false"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="username"
+                    android:inputType="text"
+                    tools:ignore="VisualLintTextFieldSize" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.7"
+                android:orientation="vertical"
+                android:id="@+id/llDocNumber"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="24dp"
+                    android:id="@+id/tvDocNumber"
+                    android:text="@string/nro_documento"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:id="@+id/etDocNumber"
+                    android:inputType="number"
+                    android:hint="@string/n_mero_documento"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="creditCardNumber"
+                    tools:ignore="VisualLintTextFieldSize" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:layout_width="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="12dp"
+            android:text="@string/guardar_tarjeta"
+            app:switchPadding="12dp"
+            android:id="@+id/btnSaveCard"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:id="@+id/cvContainer"
+        app:cardElevation="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        app:strokeWidth="0.5dp"
+        app:strokeColor="@color/grayLight"
+        app:cardBackgroundColor="@color/white"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_margin="24dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/btnNextStep"
+                app:cardBackgroundColor="@color/blue"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/confirmar_compra"
+                    android:layout_gravity="center"
+                    android:layout_margin="12dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:id="@+id/tvBtnSelectPlace"
+                    android:layout_height="wrap_content"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

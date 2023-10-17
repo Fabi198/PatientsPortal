@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            app:cardElevation="10dp"
+            app:strokeColor="@color/gray"
+            app:strokeWidth="1dp"
+            android:id="@+id/cvWeekDate"
+            android:layout_alignParentTop="true"
+            app:cardBackgroundColor="@color/white"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:id="@+id/tvDate"
+                android:layout_margin="20dp"
+                android:layout_height="wrap_content"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_below="@id/cvWeekDate"
+            android:layout_above="@id/btnClose"
+            android:id="@+id/clSecondMain"
+            android:visibility="gone"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                android:layout_margin="8dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:id="@+id/llPhoto"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="12dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:id="@+id/tvPhoto"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_margin="12dp"
+                        android:src="@drawable/profile_img_minerva"
+                        android:scaleType="fitCenter"
+                        android:id="@+id/ivPhoto"
+                        android:contentDescription="@string/todo"
+                        android:layout_height="400dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:id="@+id/llNote"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_horizontal"
+                        android:id="@+id/tvNoteTitle"
+                        android:layout_margin="12dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="12dp"
+                        android:id="@+id/tvNote"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:id="@+id/llFeel"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/hoy_me_siento"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="12dp"
+                        android:src="@drawable/baseline_sentiment_satisfied_alt_24"
+                        android:id="@+id/ivFeel"
+                        android:contentDescription="@string/todo"
+                        android:layout_height="40dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:id="@+id/tvFeel"
+                        android:layout_marginBottom="12dp"
+                        android:textColor="@color/blue"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_below="@id/cvWeekDate"
+            android:layout_above="@id/btnClose"
+            android:id="@+id/svMain"
+            android:visibility="gone"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/tvWeek"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="@string/semana_5"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:id="@+id/tvDesc"
+                    android:layout_below="@id/tvWeek"
+                    android:layout_margin="12dp"
+                    android:textColor="@color/black"
+                    android:text="@string/description_fetus_week_05"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@id/tvDesc"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="24dp"
+                    android:id="@+id/ivPW"
+                    android:contentDescription="@string/todo"
+                    android:layout_height="wrap_content"/>
+
+
+
+            </RelativeLayout>
+
+
+
+        </ScrollView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_marginTop="4dp"
+            android:id="@+id/btnClose"
+            app:cardElevation="10dp"
+            app:strokeColor="@color/gray"
+            app:strokeWidth="1dp"
+            android:layout_alignParentBottom="true"
+            app:cardBackgroundColor="@color/white"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="18sp"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
+                android:layout_margin="20dp"
+                android:text="@string/cerrar"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

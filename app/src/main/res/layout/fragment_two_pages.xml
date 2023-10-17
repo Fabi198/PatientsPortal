@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragmentsDrawerMenu.TwoPagesFragment">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        app:tabMode="scrollable"
+        android:contentDescription="@string/todo"
+        app:tabIndicator="@color/white"
+        app:tabIndicatorHeight="0dp"
+        app:tabIconTint="@null"
+        app:tabPaddingStart="0dp"
+        app:tabPaddingEnd="0dp"
+        app:tabIndicatorAnimationMode="fade"
+        app:tabRippleColor="@null"
+        app:tabGravity="center"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_marginTop="48dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <View
+        android:id="@+id/modalBackground"
+        android:layout_width="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="gone" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="18dp"
+        app:cardCornerRadius="25dp"
+        android:visibility="invisible"
+        android:id="@+id/btn_re_new_expired_prescriptions"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@color/blue"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:drawablePadding="12dp"
+            android:layout_margin="16dp"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:id="@+id/tvReNewPrescriptions"
+            android:layout_height="match_parent"
+            app:drawableStartCompat="@drawable/baseline_add_24" />
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/addPatientTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp"
+        android:visibility="gone"
+        app:fab_labelStyle="@style/medicalTestMenuFABLabel"
+        app:fab_addButtonColorNormal="@color/blue"
+        app:fab_addButtonSize="normal"
+        app:fab_labelsPosition="left">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/loadNewMedicalTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/blue"
+            app:fab_icon="@drawable/baseline_content_paste_24"
+            app:fab_size="mini"
+            app:fab_title="@string/subir_nuevo_estudio" />
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/openCurrentPrescriptionsMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp"
+        android:visibility="gone"
+        android:elevation="30dp"
+        app:fab_labelStyle="@style/medicalTestMenuFABLabel"
+        app:fab_addButtonColorNormal="@color/blue"
+        app:fab_addButtonSize="normal"
+        app:fab_labelsPosition="left">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/myOrders"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/blue"
+            app:fab_icon="@drawable/baseline_list_24"
+            app:fab_size="mini"
+            app:fab_title="@string/mis_pedidos" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/buyGoodDrugs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_icon="@drawable/baseline_shopping_cart_24"
+            app:fab_size="mini"
+            app:fab_colorNormal="@color/blueDisable"
+            app:fab_title="@string/comprar_medicamentos" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/loadPrescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/blueDisable"
+            app:fab_icon="@drawable/baseline_receipt_24"
+            app:fab_size="mini"
+            app:fab_title="@string/generar_receta" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/renewPrescriptions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/blueDisable"
+            app:fab_icon="@drawable/baseline_refresh_24"
+            app:fab_size="mini"
+            android:alpha="0.5"
+            app:fab_title="@string/renovar_recetas" />
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

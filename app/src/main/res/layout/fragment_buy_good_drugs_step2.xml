@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rlMain"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragmentsDrawerMenu.buyGoodDrugsSteps.BuyGoodDrugsStep2">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_margin="16dp"
+        android:id="@+id/radioGroup"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_weight="25"
+            android:textColor="@color/black"
+            android:paddingStart="8dp"
+            android:checked="true"
+            android:id="@+id/btnShipping"
+            android:text="@string/env_o_a_domicilio"
+            android:layout_height="wrap_content"
+            tools:ignore="RtlSymmetry,VisualLintButtonSize" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_weight="25"
+            android:textColor="@color/black"
+            android:id="@+id/btnTakeAway"
+            android:text="@string/retiro_en_centro_m_dico"
+            android:layout_height="wrap_content"
+            tools:ignore="VisualLintButtonSize" />
+
+    </RadioGroup>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/radioGroup"
+        android:layout_above="@id/cvContainer"
+        android:orientation="vertical"
+        android:id="@+id/llShipping"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:layout_margin="12dp"
+            android:id="@+id/tvAddress"
+            android:visibility="gone"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/blue"
+            app:layout_constraintTop_toBottomOf="@id/btnSelectPlace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/btnAddNewAddress"
+            app:cardBackgroundColor="@color/white"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="@string/agregar_nuevo_domicilio"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:gravity="center_vertical"
+                android:drawablePadding="8dp"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
+                android:id="@+id/tvBtnAddNewAddress"
+                android:layout_height="wrap_content"
+                app:drawableStartCompat="@drawable/baseline_add_location_24" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_margin="12dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/tel_fono_de_contacto_actual"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etCellPhoneShipping"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:autofillHints="phone"
+            android:hint="@string/n_mero_de_tel_fono"
+            android:inputType="phone"
+            tools:ignore="VisualLintTextFieldSize,TouchTargetSizeCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_margin="12dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/horario_de_entrega"
+            android:layout_height="wrap_content"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="12dp"
+            android:visibility="invisible"
+            android:id="@+id/radioGroupHour"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_weight="25"
+                android:textColor="@color/black"
+                android:paddingStart="8dp"
+                android:id="@+id/btnMorning"
+                android:text="@string/_8_a_15_hs"
+                android:layout_height="wrap_content"
+                tools:ignore="RtlSymmetry,VisualLintButtonSize" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_weight="25"
+                android:textColor="@color/black"
+                android:id="@+id/btnAfternoon"
+                android:text="@string/_13_a_19_hs"
+                android:layout_height="wrap_content"
+                tools:ignore="VisualLintButtonSize" />
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_margin="12dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/fecha_de_entrega"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etDeliverDateShipping"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:autofillHints="phone"
+            android:drawableEnd="@drawable/baseline_event_24"
+            android:focusable="false"
+            android:inputType="date"
+            tools:ignore="VisualLintTextFieldSize,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/radioGroup"
+        android:layout_above="@id/cvContainer"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/llTakeAway"
+        android:layout_height="match_parent">
+
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_margin="12dp"
+            android:textColor="@color/blue"
+            android:text="@string/seleccionar_centro_medico"
+            android:id="@+id/spinnerPlaces"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/separatorStreet"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="12dp"
+            android:background="@color/grayLight"
+            android:contentDescription="@string/todo"
+            android:src="@android:drawable/divider_horizontal_bright"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_margin="12dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/tel_fono_de_contacto_actual"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:inputType="phone"
+            android:layout_margin="12dp"
+            android:id="@+id/etCellPhoneTakeAway"
+            android:hint="@string/n_mero_de_tel_fono"
+            android:layout_height="wrap_content"
+            android:autofillHints="phone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_margin="12dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/horario_de_entrega"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="@string/a_partir_de_las_14_hs"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:layout_marginEnd="24dp"
+            android:layout_marginStart="24dp"
+            android:text="@string/los_medicamentos_permanecer_n_48_hs_h_biles_desde_su_llegada_al_centro_perif_rico_luego_retornar_n_a_la_farmacia_central"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_margin="12dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="@string/fecha_de_entrega"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:inputType="date"
+            android:layout_margin="12dp"
+            android:drawableEnd="@drawable/baseline_event_24"
+            android:focusable="false"
+            android:id="@+id/etDeliverDateTakeAway"
+            android:layout_height="wrap_content"
+            android:autofillHints="phone" />
+
+    </LinearLayout>
+
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:id="@+id/cvContainer"
+        app:cardElevation="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        app:strokeWidth="0.5dp"
+        app:strokeColor="@color/grayLight"
+        app:cardBackgroundColor="@color/white"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_margin="24dp"
+            android:id="@+id/btnNextStep"
+            android:alpha="0.5"
+            app:cardBackgroundColor="@color/blue"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvBtnSelectPlace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="12dp"
+                android:text="@string/continuar"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

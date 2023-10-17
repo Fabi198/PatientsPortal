@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group
+        android:id="@+id/group_home">
+
+        <item
+            android:id="@+id/item_home"
+            android:title="@string/inicio"
+            android:titleCondensed="8sp"
+            android:icon="@drawable/icon_main"
+            app:showAsAction="never"/>
+
+    </group>
+
+    <group
+        android:id="@+id/group_appointment">
+
+        <item
+            android:id="@+id/item_appointment"
+            android:title="@string/turnos"
+            android:icon="@drawable/baseline_event_24"
+            app:showAsAction="never" />
+
+    </group>
+
+    <group
+        android:id="@+id/group_medical_test">
+
+        <item
+            android:id="@+id/item_medical_test"
+            android:title="@string/estudios"
+            android:icon="@drawable/baseline_description_24"
+            app:showAsAction="never" />
+
+    </group>
+
+    <group
+        android:id="@+id/group_health_coverage">
+
+        <item
+            android:id="@+id/item_health_coverage"
+            android:title="@string/mi_cobertura"
+            android:icon="@drawable/baseline_book_24"
+            app:showAsAction="never"/>
+
+
+    </group>
+
+    <group
+        android:id="@+id/group_diary">
+
+        <item
+            android:id="@+id/item_diary"
+            android:title="@string/mi_diario"
+            android:icon="@drawable/icon_diary"
+            app:showAsAction="never" />
+
+    </group>
+
+    <group
+        android:id="@+id/group_drugs">
+
+        <item
+            android:id="@+id/item_drugs"
+            android:title="@string/medicamentos"
+            android:icon="@drawable/icon_drugs"
+            app:showAsAction="never" />
+
+    </group>
+
+    <group
+        android:id="@+id/group_doctors">
+
+        <item
+            android:id="@+id/item_doctors"
+            android:title="@string/mis_medicos"
+            android:icon="@drawable/icon_doctors"
+            app:showAsAction="never"/>
+
+    </group>
+
+    <group
+        android:id="@+id/group_community">
+
+        <item
+            android:id="@+id/item_community"
+            android:title="@string/comunidades"
+            android:icon="@drawable/baseline_forum_24"
+            app:showAsAction="never" />
+
+    </group>
+
+    <group
+        android:id="@+id/group_provider_directory">
+
+        <item
+            android:id="@+id/item_provider_directory"
+            android:title="@string/cartilla"
+            android:icon="@drawable/baseline_menu_book_24"
+            app:showAsAction="never" />
+
+    </group>
+
+    <group
+        android:id="@+id/group_health_control">
+
+        <item
+            android:id="@+id/item_health_control"
+            android:title="@string/controles_de_salud"
+            android:icon="@drawable/icon_health_controls"
+            app:showAsAction="never" />
+
+    </group>
+
+    <group
+        android:id="@+id/group_help">
+
+        <item
+            android:id="@+id/item_help"
+            android:title="@string/ayuda"
+            android:icon="@drawable/baseline_help_24"
+            app:showAsAction="never"/>
+
+    </group>
+
+</menu>

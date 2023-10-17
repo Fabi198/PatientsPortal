@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rlMain"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragmentsDrawerMenu.MyPregnantFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="20dp"
+        android:layout_margin="8dp"
+        android:id="@+id/cvSuccessfullyPhoto"
+        android:visibility="gone"
+        android:layout_alignParentTop="true"
+        app:cardBackgroundColor="@color/greenLight"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/animatedCheck"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="8dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:contentDescription="@string/todo"
+                android:elevation="1dp"
+                android:scaleType="fitXY"/>
+
+            <ImageView
+                android:id="@+id/animatedCheckCover"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="8dp"
+                android:elevation="2dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/animated_check_cover"
+                android:contentDescription="@string/todo"
+                android:scaleType="fitXY"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@string/genial"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/animatedCheck"
+                android:layout_margin="8dp"
+                android:id="@+id/tv1"
+                android:padding="8dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:id="@+id/tv2"
+                android:text="@string/la_imagen_se_carg_correctamente"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="24dp"
+                android:padding="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="wrap_content"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarMyContractions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        app:popupTheme="@style/PopupMenu"
+        android:background="@color/blue">
+
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:background="@null"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/baseline_arrow_back_ios_24"
+            tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:text="@string/mis_contracciones"
+            android:textColor="@color/white" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_gravity="end"
+            android:background="@null"
+            android:src="@drawable/outline_info_24"
+            android:padding="12dp"
+            android:id="@+id/btnInfo"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/todo"
+            app:tint="@color/white" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_gravity="end"
+            android:background="@null"
+            android:src="@drawable/outline_share_24"
+            android:padding="12dp"
+            android:id="@+id/btnShare"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/todo"
+            app:tint="@color/white" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/rlCreateContractionView"
+        android:layout_below="@id/toolbarMyContractions"
+        android:layout_above="@id/cvChangeView"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_marginTop="12dp"
+            android:layout_alignParentTop="true"
+            app:cardBackgroundColor="@color/graySuperLight"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            app:cardCornerRadius="20dp"
+            android:id="@+id/cvChronometer"
+            app:strokeColor="@color/blue"
+            app:strokeWidth="1dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@string/_00_00_00"
+                android:textSize="18sp"
+                android:id="@+id/tvChronometer"
+                android:layout_margin="8dp"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/cvChronometer"
+            android:layout_margin="8dp"
+            android:textColor="@color/black"
+            android:id="@+id/tvTimeFromLastContraction"
+            android:text="@string/tiempo_desde_la_ltima_contracci_n"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnStartContraction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTimeFromLastContraction"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="@color/blueDark"
+            android:elevation="4dp"
+            android:text="@string/empieza_la_contracci_n"
+            android:textAllCaps="true"
+            android:textColor="@color/white" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_below="@id/btnStartContraction"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="4dp"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:id="@+id/tlMain"
+                        android:layout_height="wrap_content">
+
+                        <!-- Fila 1 -->
+                        <TableRow tools:ignore="UselessParent">
+                            <!-- Columna 1 - Título "Duración" -->
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="30"
+                                android:layout_height="wrap_content"
+                                android:text="@string/duraci_n"
+                                android:textColor="@color/black"
+                                android:textAlignment="center"
+                                android:textStyle="bold"
+                                android:padding="8dp"/>
+
+                            <!-- Columna 2 - Título "Intervalo" -->
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="30"
+                                android:layout_height="wrap_content"
+                                android:text="@string/intervalo"
+                                android:textColor="@color/black"
+                                android:textAlignment="center"
+                                android:textStyle="bold"
+                                android:padding="8dp"/>
+
+                            <!-- Columna 3 - Título "Inicio y Fin" -->
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="30"
+                                android:layout_height="wrap_content"
+                                android:text="@string/inicio_y_fin"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:textAlignment="center"
+                                android:padding="8dp"/>
+                        </TableRow>
+
+                        <!-- Aquí puedes agregar más filas y datos según sea necesario -->
+
+                    </TableLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:id="@+id/miniCardsConfirm"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_margin="12dp"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toBottomOf="@id/tlMain"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:id="@+id/btnErase"
+                            app:cardBackgroundColor="@color/white"
+                            app:strokeColor="@color/blue"
+                            android:layout_marginEnd="48dp"
+                            app:strokeWidth="1dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="@string/borrar"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:gravity="center_vertical"
+                                android:drawablePadding="4dp"
+                                android:textColor="@color/blue"
+                                android:layout_height="wrap_content"
+                                app:drawableTint="@color/red"
+                                app:drawableStartCompat="@drawable/baseline_delete_24" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            app:strokeColor="@color/blue"
+                            app:cardBackgroundColor="@color/white"
+                            android:id="@+id/btnSave"
+                            android:layout_marginStart="48dp"
+                            app:strokeWidth="1dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="@string/guardar"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:drawablePadding="4dp"
+                                android:gravity="center_vertical"
+                                android:textColor="@color/blue"
+                                android:layout_height="wrap_content"
+                                app:drawableStartCompat="@drawable/baseline_save_24" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </ScrollView>
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/toolbarMyContractions"
+        android:layout_above="@id/cvChangeView"
+        android:id="@+id/rlHistoryView"
+        android:visibility="gone"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvContractions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_pregnancy_contraction" />
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        app:cardElevation="20dp"
+        android:id="@+id/cvChangeView"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_margin="12dp"
+            app:strokeWidth="1dp"
+            android:layout_gravity="center"
+            app:strokeColor="@color/blue"
+            android:id="@+id/btnChangeView"
+            app:cardBackgroundColor="@color/white"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:layout_gravity="center"
+                android:id="@+id/tvChangeView"
+                android:text="@string/ver_hist_rico"
+                android:drawablePadding="4dp"
+                android:layout_margin="8dp"
+                android:layout_height="wrap_content"
+                app:drawableStartCompat="@drawable/baseline_receipt_24"
+                app:drawableTint="@color/blue" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

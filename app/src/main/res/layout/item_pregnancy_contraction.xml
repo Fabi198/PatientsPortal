@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="4dp"
+        app:strokeColor="@color/grayLight"
+        app:strokeWidth="1dp"
+        android:layout_alignParentTop="true"
+        app:cardElevation="10dp"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:id="@+id/toolbarItemContractions"
+                android:layout_alignParentTop="true"
+                android:background="@color/grayLight"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="start"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:id="@+id/tvContractionsTitle"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:id="@+id/tlMain"
+                android:layout_below="@id/toolbarItemContractions"
+                android:layout_height="wrap_content">
+
+                <!-- Fila 1 -->
+                <TableRow>
+                    <!-- Columna 1 - Título "Duración" -->
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="30"
+                        android:layout_height="wrap_content"
+                        android:text="@string/duraci_n"
+                        android:textColor="@color/black"
+                        android:textAlignment="center"
+                        android:textStyle="bold"
+                        android:padding="8dp"/>
+
+                    <!-- Columna 2 - Título "Intervalo" -->
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="30"
+                        android:layout_height="wrap_content"
+                        android:text="@string/intervalo"
+                        android:textColor="@color/black"
+                        android:textAlignment="center"
+                        android:textStyle="bold"
+                        android:padding="8dp"/>
+
+                    <!-- Columna 3 - Título "Inicio y Fin" -->
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="30"
+                        android:layout_height="wrap_content"
+                        android:text="@string/inicio_y_fin"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textAlignment="center"
+                        android:padding="8dp"/>
+                </TableRow>
+
+                <TableRow>
+
+                    <ImageView
+                        android:id="@+id/separator"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="1dp"
+                        android:background="@color/grayLight"
+                        android:contentDescription="@string/todo"
+                        android:src="@android:drawable/divider_horizontal_bright"
+                        tools:ignore="ImageContrastCheck" />
+
+                </TableRow>
+
+
+            </TableLayout>
+
+        </RelativeLayout>
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

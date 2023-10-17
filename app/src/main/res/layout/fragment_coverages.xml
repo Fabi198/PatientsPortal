@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragmentsDrawerMenu.CoveragesFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/clMainView"
+        android:visibility="visible"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/blue"
+            android:id="@+id/toolbarListCoverages"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:text="@string/seleccionar_cobertura"
+                android:layout_height="wrap_content"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:layout_width="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarListCoverages"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="16dp"
+            android:maxWidth="320dp"
+            android:id="@+id/tvSubTitle"
+            android:textAlignment="center"
+            android:text="@string/tambi_n_pod_s_modificar_los_datos_del_plan_o_agregar_alguna_otra_cobertura"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSubTitle"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            tools:itemCount="6"
+            android:id="@+id/rvCoverages"
+            android:layout_marginTop="16dp"
+            tools:listitem="@layout/item_coverage"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="8dp"
+            android:id="@+id/btnAddCoverage"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/blue"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="@string/agregar_nueva_cobertura"
+                android:textColor="@color/white"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="12sp"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content"
+                app:drawableStartCompat="@drawable/baseline_add_24" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/clAddView"
+        android:visibility="gone"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/blue"
+            android:id="@+id/toolbarAddCoverage"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="@string/nueva_cobertura"
+                android:layout_height="wrap_content"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:layout_width="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarAddCoverage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="16dp"
+            android:maxWidth="320dp"
+            android:id="@+id/tvSubTitleAddCoverage"
+            android:textAlignment="center"
+            android:text="@string/ingres_los_datos_de_tu_nueva_cobertura"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tvSubTitleAddCoverage"
+            android:textStyle="bold"
+            android:text="@string/cobertura"
+            android:layout_marginStart="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="24dp"
+            android:id="@+id/tvCoverage"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_margin="12dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="4dp"
+            android:id="@+id/mcvEtSearch"
+            app:layout_constraintTop_toBottomOf="@+id/tvCoverage"
+            android:layout_height="wrap_content">
+
+            <AutoCompleteTextView
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:drawableStart="@drawable/baseline_search_24"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:inputType="textImeMultiLine"
+                android:hint="@string/ejemplo_plan_de_salud_hiba"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"
+                tools:ignore="VisualLintTextFieldSize,TouchTargetSizeCheck" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_margin="12dp"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/mcvEtSearch"
+            android:id="@+id/tvInputPlan"
+            app:cardBackgroundColor="@color/white"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:hint="@string/tipo_de_plan"
+                android:drawableEnd="@android:drawable/arrow_down_float"
+                android:enabled="false"
+                android:focusable="false"
+                android:alpha="0.5"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grayLight"
+                android:layout_margin="4dp"
+                android:id="@+id/etPlan"
+                android:inputType="number"
+                android:importantForAutofill="no"
+                android:layout_height="match_parent"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_margin="12dp"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/tvInputPlan"
+            android:id="@+id/tvInputAffiliateNumber"
+            app:cardBackgroundColor="@color/white"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:hint="@string/n_mero_de_socio"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grayLight"
+                android:alpha="0.5"
+                android:enabled="false"
+                android:layout_margin="4dp"
+                android:id="@+id/etAffiliateNumber"
+                android:importantForAutofill="no" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_margin="12dp"
+            android:layout_width="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvInputAffiliateNumber"
+            android:id="@+id/btnCredentialPhoto"
+            app:cardCornerRadius="8dp"
+            app:strokeColor="@color/blue"
+            app:strokeWidth="1dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cargar_foto_credencial"
+                android:enabled="false"
+                android:gravity="center_vertical"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/blue"
+                android:id="@+id/btnCredentialPhotoText"
+                android:alpha="0.5"
+                android:drawablePadding="4dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:drawableStartCompat="@drawable/baseline_contact_emergency_24" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_margin="12dp"
+            android:layout_width="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="4dp"
+            android:id="@+id/btnSaveCoverage"
+            app:cardCornerRadius="4dp"
+            app:strokeColor="@color/blue"
+            app:strokeWidth="1dp"
+            android:enabled="false"
+            android:alpha="0.5"
+            app:cardBackgroundColor="@color/blue"
+            android:layout_height="wrap_content">
+
+            <ProgressBar
+                android:layout_width="24dp"
+                android:id="@+id/pbSaveCoverage"
+                android:visibility="invisible"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                android:indeterminateTint="#14769D"
+                android:layout_height="24dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:id="@+id/tvSaveCoverage"
+                android:textColor="@color/white"
+                android:drawablePadding="4dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

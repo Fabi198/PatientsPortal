@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clWritingView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:background="@color/blue"
+            android:id="@+id/toolbarCustomAlertDialogNewAddress"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/baseline_arrow_back_ios_24"
+                android:id="@+id/btnClose"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/nuevo_domicilio"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="240dp" />
+
+        <TextView
+            android:id="@+id/tvStreetW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:maxWidth="130dp"
+            android:text="@string/calle"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbarCustomAlertDialogNewAddress" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvEditStreetW"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/tvStreetW"
+            app:layout_constraintStart_toEndOf="@id/guideline4"
+            app:layout_constraintTop_toTopOf="@id/tvStreetW"
+            app:strokeColor="@color/grayLight"
+            app:strokeWidth="1dp">
+
+            <EditText
+                android:id="@+id/tvEditStreet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:autofillHints="name"
+                android:inputType="text"
+                android:textColor="@color/blue"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:id="@+id/separatorStreetW"
+            tools:ignore="ImageContrastCheck"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="12dp"
+            android:background="@color/grayLight"
+            android:contentDescription="@string/todo"
+            android:src="@android:drawable/divider_horizontal_bright"
+            app:layout_constraintTop_toBottomOf="@id/cvEditStreetW" />
+
+        <TextView
+            android:id="@+id/tvNumberW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:maxWidth="130dp"
+            android:text="@string/n_mero"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/separatorStreetW" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvEditNumberW"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/tvNumberW"
+            app:layout_constraintStart_toEndOf="@id/guideline4"
+            app:layout_constraintTop_toTopOf="@id/tvNumberW"
+            app:strokeColor="@color/grayLight"
+            app:strokeWidth="1dp">
+
+            <EditText
+                android:id="@+id/tvEditNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:autofillHints="postalAddress"
+                android:inputType="number"
+                android:textAllCaps="true"
+                android:textColor="@color/blue"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:id="@+id/separatorNumberW"
+            tools:ignore="ImageContrastCheck"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="12dp"
+            android:background="@color/grayLight"
+            android:contentDescription="@string/todo"
+            android:src="@android:drawable/divider_horizontal_bright"
+            app:layout_constraintTop_toBottomOf="@id/cvEditNumberW" />
+
+        <TextView
+            android:id="@+id/tvFloorW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:maxWidth="130dp"
+            android:text="@string/piso"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/separatorNumberW" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvEditFloorW"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/tvFloorW"
+            app:layout_constraintStart_toEndOf="@id/guideline4"
+            app:layout_constraintTop_toTopOf="@id/tvFloorW"
+            app:strokeColor="@color/grayLight"
+            app:strokeWidth="1dp">
+
+            <EditText
+                android:id="@+id/tvEditFloor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:autofillHints="name"
+                android:inputType="number"
+                android:textAllCaps="true"
+                android:textColor="@color/blue"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:id="@+id/separatorFloorW"
+            tools:ignore="ImageContrastCheck"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="12dp"
+            android:background="@color/grayLight"
+            android:contentDescription="@string/todo"
+            android:src="@android:drawable/divider_horizontal_bright"
+            app:layout_constraintTop_toBottomOf="@id/cvEditFloorW" />
+
+        <TextView
+            android:id="@+id/tvDepartmentW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:maxWidth="130dp"
+            android:text="@string/departamento"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/separatorFloorW" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvEditDepartmentW"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/tvDepartmentW"
+            app:layout_constraintStart_toEndOf="@id/guideline4"
+            app:layout_constraintTop_toTopOf="@id/tvDepartmentW"
+            app:strokeColor="@color/grayLight"
+            app:strokeWidth="1dp">
+
+            <EditText
+                android:id="@+id/tvEditDepartment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:autofillHints="name"
+                android:inputType="text"
+                android:textAllCaps="true"
+                android:textColor="@color/blue"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:id="@+id/separatorDepartmentW"
+            tools:ignore="ImageContrastCheck"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="12dp"
+            android:background="@color/grayLight"
+            android:contentDescription="@string/todo"
+            android:src="@android:drawable/divider_horizontal_bright"
+            app:layout_constraintTop_toBottomOf="@id/cvEditDepartmentW" />
+
+        <TextView
+            android:id="@+id/tvObservationsW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:maxWidth="130dp"
+            android:text="@string/observaciones"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/separatorDepartmentW" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvEditObservationsW"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/tvObservationsW"
+            app:layout_constraintStart_toEndOf="@id/guideline4"
+            app:layout_constraintTop_toTopOf="@id/tvObservationsW"
+            app:strokeColor="@color/grayLight"
+            app:strokeWidth="1dp">
+
+            <EditText
+                android:id="@+id/tvEditObservations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:autofillHints="name"
+                android:inputType="text"
+                android:textAllCaps="true"
+                android:textColor="@color/blue"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:id="@+id/separatorObservationsW"
+            tools:ignore="ImageContrastCheck"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="12dp"
+            android:background="@color/grayLight"
+            android:contentDescription="@string/todo"
+            android:src="@android:drawable/divider_horizontal_bright"
+            app:layout_constraintTop_toBottomOf="@id/cvEditObservationsW" />
+
+        <TextView
+            android:id="@+id/tvPostalCodeW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:maxWidth="130dp"
+            android:text="@string/c_digo_postal"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/separatorObservationsW" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvEditPostalCodeW"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/tvPostalCodeW"
+            app:layout_constraintStart_toEndOf="@id/guideline4"
+            app:layout_constraintTop_toTopOf="@id/tvPostalCodeW"
+            app:strokeColor="@color/grayLight"
+            app:strokeWidth="1dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="@color/white"
+                app:boxBackgroundMode="filled"
+                app:counterEnabled="true"
+                app:counterMaxLength="4"
+                app:counterTextColor="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/postalCodeShippingAddress"
+                    tools:ignore="VisualLintTextFieldSize,SpeakableTextPresentCheck"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:imeOptions="actionSend"
+                    android:inputType="number"
+                    android:textColor="@color/blue" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:id="@+id/separatorPostalCodeW"
+            tools:ignore="ImageContrastCheck"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="12dp"
+            android:background="@color/grayLight"
+            android:contentDescription="@string/todo"
+            android:src="@android:drawable/divider_horizontal_bright"
+            app:layout_constraintTop_toBottomOf="@id/cvEditPostalCodeW" />
+
+        <TextView
+            android:id="@+id/tvCountryW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:maxWidth="130dp"
+            android:text="@string/pa_s"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/separatorPostalCodeW" />
+
+        <TextView
+            android:id="@+id/tvDisplayedCountryW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            app:layout_constraintBottom_toBottomOf="@id/tvCountryW"
+            app:layout_constraintStart_toEndOf="@id/guideline4"
+            app:layout_constraintTop_toTopOf="@id/tvCountryW" />
+
+        <ImageView
+            android:id="@+id/separatorCountryW"
+            tools:ignore="ImageContrastCheck"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="12dp"
+            android:background="@color/grayLight"
+            android:contentDescription="@string/todo"
+            android:src="@android:drawable/divider_horizontal_bright"
+            app:layout_constraintTop_toBottomOf="@id/tvCountryW" />
+
+        <TextView
+            android:id="@+id/tvProvinceW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:maxWidth="130dp"
+            android:text="@string/provincia"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/separatorCountryW" />
+
+        <Spinner
+            android:id="@+id/spinnerProvinceShippingAddress"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            app:layout_constraintBottom_toBottomOf="@id/tvProvinceW"
+            app:layout_constraintStart_toEndOf="@id/guideline4"
+            app:layout_constraintTop_toTopOf="@id/tvProvinceW"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageView
+            android:id="@+id/separatorProvinceW"
+            tools:ignore="ImageContrastCheck"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="12dp"
+            android:background="@color/grayLight"
+            android:contentDescription="@string/todo"
+            android:src="@android:drawable/divider_horizontal_bright"
+            app:layout_constraintTop_toBottomOf="@id/tvProvinceW" />
+
+        <TextView
+            android:id="@+id/tvLocalityW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:maxWidth="130dp"
+            android:text="@string/localidad"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/separatorProvinceW" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvLocalityShippingAddress"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/tvLocalityW"
+            app:layout_constraintStart_toEndOf="@id/guideline4"
+            app:layout_constraintTop_toTopOf="@id/tvLocalityW"
+            app:strokeColor="@color/grayLight"
+            app:strokeWidth="1dp">
+
+            <Spinner
+                android:id="@+id/spinnerLocalityShippingAddress"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <EditText
+                android:id="@+id/localityShippingAddress"
+                tools:ignore="LabelFor,VisualLintTextFieldSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:text=""
+                android:textAllCaps="false"
+                android:textColor="@color/blue"
+                android:textSize="20sp"
+                android:visibility="gone" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <CheckBox
+            android:id="@+id/cbLocalityShippingNotFound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_encuentro_mi_localidad"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/cvLocalityShippingAddress"
+            app:layout_constraintTop_toBottomOf="@id/cvLocalityShippingAddress" />
+
+        <ImageView
+            android:id="@+id/separatorLocalityW"
+            tools:ignore="ImageContrastCheck"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="12dp"
+            android:background="@color/grayLight"
+            android:contentDescription="@string/todo"
+            android:src="@android:drawable/divider_horizontal_bright"
+            app:layout_constraintTop_toBottomOf="@id/cbLocalityShippingNotFound"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnVerifyNewAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            app:layout_constraintTop_toBottomOf="@id/separatorLocalityW"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:cardBackgroundColor="@color/white"
+            app:strokeColor="@color/blue"
+            android:alpha="0.5"
+            app:strokeWidth="1dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="12dp"
+                android:gravity="center_vertical"
+                android:text="@string/validar_nuevo_domicilio"
+                android:textColor="@color/blue" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <TextView
+            android:id="@+id/tvSaveForUpcomingOrdersW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:maxWidth="200dp"
+            android:text="@string/guardar_para_proximos_env_os"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnVerifyNewAddress" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:checked="true"
+            android:id="@+id/btnSaveForUpcomingOrders"
+            app:layout_constraintBottom_toBottomOf="@id/tvSaveForUpcomingOrdersW"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvSaveForUpcomingOrdersW"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/separatorSaveForUpcomingOrdersW"
+            tools:ignore="ImageContrastCheck"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="12dp"
+            android:background="@color/grayLight"
+            android:contentDescription="@string/todo"
+            android:src="@android:drawable/divider_horizontal_bright"
+            app:layout_constraintTop_toBottomOf="@id/tvSaveForUpcomingOrdersW"/>
+
+        <TextView
+            android:id="@+id/tvReferenceNameW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:maxWidth="130dp"
+            android:text="@string/nombre_de_referencia"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/separatorSaveForUpcomingOrdersW" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvEditReferenceNameW"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/tvReferenceNameW"
+            app:layout_constraintStart_toEndOf="@id/guideline4"
+            app:layout_constraintTop_toTopOf="@id/tvReferenceNameW"
+            app:strokeColor="@color/grayLight"
+            app:strokeWidth="1dp">
+
+            <EditText
+                android:id="@+id/tvEditReferenceName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:autofillHints="name"
+                android:inputType="text"
+                android:textAllCaps="true"
+                android:textColor="@color/blue"
+                tools:ignore="LabelFor" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:id="@+id/separatorReferenceNameW"
+            tools:ignore="ImageContrastCheck"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="12dp"
+            android:background="@color/grayLight"
+            android:contentDescription="@string/todo"
+            android:src="@android:drawable/divider_horizontal_bright"
+            app:layout_constraintTop_toBottomOf="@id/cvEditReferenceNameW"/>
+
+        <LinearLayout
+            android:id="@+id/miniCards"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_margin="12dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/separatorReferenceNameW"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:cardBackgroundColor="@color/white"
+                app:strokeColor="@color/gray"
+                app:strokeWidth="0.4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="48dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/cancelar"
+                    android:textColor="@color/blue" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:cardBackgroundColor="@color/blue"
+                app:strokeColor="@color/gray"
+                app:strokeWidth="0.4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="48dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/guardar"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</ScrollView>

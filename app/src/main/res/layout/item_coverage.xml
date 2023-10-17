@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/clMain"
+        android:background="@color/grayLight"
+        android:elevation="20dp"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:contentDescription="@string/todo"
+            android:padding="8dp"
+            android:src="@drawable/baseline_health_and_safety_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/baseline_contact_emergency_24"
+            app:layout_constraintStart_toEndOf="@+id/ivCheck"
+            app:layout_constraintTop_toTopOf="@id/tvCoverageName"
+            android:id="@+id/ivCredential"
+            app:layout_constraintBottom_toBottomOf="@id/tvCoverageAssociateNumber"
+            android:layout_marginStart="4dp"
+            android:layout_height="40dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tvCoveragePlanType"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:textSize="12dp"
+            android:id="@+id/tvCoverageName"
+            app:layout_constraintStart_toEndOf="@+id/ivCredential"
+            android:layout_height="wrap_content"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tvCoverageName"
+            app:layout_constraintBottom_toTopOf="@+id/tvCoverageAssociateNumber"
+            android:textColor="@color/black"
+            android:layout_marginStart="4dp"
+            android:textSize="12dp"
+            android:id="@+id/tvCoveragePlanType"
+            app:layout_constraintStart_toEndOf="@+id/ivCredential"
+            android:layout_height="wrap_content"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tvCoveragePlanType"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="@color/black"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="8dp"
+            android:textSize="12dp"
+            android:id="@+id/tvCoverageAssociateNumber"
+            app:layout_constraintStart_toEndOf="@+id/ivCredential"
+            android:layout_height="wrap_content"
+            tools:ignore="SpUsage" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/baseline_swipe_24"
+            android:layout_margin="16dp"
+            android:id="@+id/btnSwipe"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:background="@color/blue"
+        android:elevation="10dp"
+        android:id="@+id/btnCoverageEdit"
+        android:gravity="fill_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="0dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:gravity="center_vertical"
+            android:text="@string/editar"
+            android:textColor="@color/white"
+            app:drawableStartCompat="@drawable/baseline_note_alt_24"
+            tools:ignore="TextContrastCheck" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:background="@color/redLight"
+        android:elevation="10dp"
+        android:gravity="fill_vertical"
+        android:id="@+id/btnCoverageDelete"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnCoverageEdit"
+        android:layout_height="0dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="@color/white"
+            android:text="@string/eliminar"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:layout_margin="8dp"
+            android:layout_height="wrap_content"
+            app:drawableStartCompat="@drawable/baseline_delete_forever_24" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:drawablePadding="12dp"
+                android:gravity="center_vertical"
+                android:text="@string/datos_personales"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/baseline_contact_emergency_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/btnEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:text="@string/cambiar"
+                android:textColor="@color/blue"
+                app:drawableStartCompat="@drawable/baseline_edit_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clReadingView"
+                android:layout_width="match_parent"
+                android:visibility="visible"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/btnEdit">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="240dp" />
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/nombre"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvDisplayedName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    app:layout_constraintBottom_toBottomOf="@id/tvName"
+                    app:layout_constraintStart_toEndOf="@id/guideline3"
+                    app:layout_constraintTop_toTopOf="@id/tvName" />
+
+                <ImageView
+                    android:id="@+id/separatorName"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/tvName"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvLastName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/apellido"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorName" />
+
+                <TextView
+                    android:id="@+id/tvDisplayedLastName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    app:layout_constraintBottom_toBottomOf="@id/tvLastName"
+                    app:layout_constraintStart_toEndOf="@id/guideline3"
+                    app:layout_constraintTop_toTopOf="@id/tvLastName" />
+
+                <ImageView
+                    android:id="@+id/separatorLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/tvLastName"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvMotherLastName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/apellido_materno"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorLastName" />
+
+                <TextView
+                    android:id="@+id/tvDisplayedMotherLastName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    app:layout_constraintBottom_toBottomOf="@id/tvMotherLastName"
+                    app:layout_constraintStart_toEndOf="@id/guideline3"
+                    app:layout_constraintTop_toTopOf="@id/tvMotherLastName" />
+
+                <ImageView
+                    android:id="@+id/separatorMotherLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/tvMotherLastName"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvBirthday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/fecha_de_nacimiento"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorMotherLastName" />
+
+                <TextView
+                    android:id="@+id/tvDisplayedBirthday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    app:layout_constraintBottom_toBottomOf="@id/tvBirthday"
+                    app:layout_constraintStart_toEndOf="@id/guideline3"
+                    app:layout_constraintTop_toTopOf="@id/tvBirthday" />
+
+                <ImageView
+                    android:id="@+id/separatorBirthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/tvBirthday"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvDocument"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/tipo_y_n_de_documento"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorBirthday"/>
+
+                <TextView
+                    android:id="@+id/tvDisplayedDocumentType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    app:layout_constraintTop_toTopOf="@id/tvDocument"
+                    app:layout_constraintBottom_toBottomOf="@id/tvDocument"
+                    app:layout_constraintStart_toEndOf="@id/guideline3" />
+
+                <TextView
+                    android:id="@+id/tvDisplayedDocument"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    app:layout_constraintBottom_toBottomOf="@id/tvDocument"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="32dp"
+                    app:layout_constraintTop_toTopOf="@id/tvDocument" />
+
+                <ImageView
+                    android:id="@+id/separatorDocument"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/tvDocument"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvBiologicalSex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/sexo_biologico"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorDocument"/>
+
+                <TextView
+                    android:id="@+id/tvDisplayedBiologicalSex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    app:layout_constraintBottom_toBottomOf="@id/tvBiologicalSex"
+                    app:layout_constraintStart_toEndOf="@id/guideline3"
+                    app:layout_constraintTop_toTopOf="@id/tvBiologicalSex" />
+
+                <ImageView
+                    android:id="@+id/separatorBiologicalSex"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/tvBiologicalSex"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvGender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/g_nero"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorBiologicalSex"/>
+
+                <TextView
+                    android:id="@+id/tvDisplayedGender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    app:layout_constraintBottom_toBottomOf="@id/tvGender"
+                    app:layout_constraintTop_toTopOf="@id/tvGender"
+                    app:layout_constraintStart_toEndOf="@id/guideline3"/>
+
+                <ImageView
+                    android:id="@+id/separatorGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/tvGender"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:ignore="ImageContrastCheck" />
+
+                <ImageButton
+                    android:id="@+id/btnInfoGender"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="@color/white"
+                    android:contentDescription="@string/todo"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/outline_info_24"
+                    app:layout_constraintBottom_toBottomOf="@id/tvDisplayedGender"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvDisplayedGender"
+                    tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clWritingView"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/btnEdit">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="240dp" />
+
+                <TextView
+                    android:id="@+id/tvNameW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/nombre"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="200dp"
+                    app:strokeWidth="1dp"
+                    android:id="@+id/cvEditName"
+                    app:strokeColor="@color/grayLight"
+                    app:layout_constraintBottom_toBottomOf="@id/tvNameW"
+                    app:layout_constraintStart_toEndOf="@id/guideline4"
+                    app:layout_constraintTop_toTopOf="@id/tvNameW"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/tvEditName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:layout_marginStart="4dp"
+                        android:autofillHints="name"
+                        android:textAllCaps="true"
+                        android:textColor="@color/blue"
+                        tools:ignore="LabelFor" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+                <ImageView
+                    android:id="@+id/separatorNameW"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/cvEditName"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvLastNameW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/apellido"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorNameW" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="200dp"
+                    app:strokeWidth="1dp"
+                    android:id="@+id/cvEditLastName"
+                    app:strokeColor="@color/grayLight"
+                    app:layout_constraintBottom_toBottomOf="@id/tvLastNameW"
+                    app:layout_constraintStart_toEndOf="@id/guideline4"
+                    app:layout_constraintTop_toTopOf="@id/tvLastNameW"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/tvEditLastName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:inputType="textPersonName"
+                        android:autofillHints="name"
+                        android:textAllCaps="true"
+                        android:textColor="@color/blue"
+                        tools:ignore="LabelFor" />
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+                <ImageView
+                    android:id="@+id/separatorLastNameW"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/cvEditLastName"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvMotherLastNameW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/apellido_materno"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorLastNameW" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="200dp"
+                    app:strokeWidth="1dp"
+                    android:id="@+id/cvEditMotherLastName"
+                    app:strokeColor="@color/grayLight"
+                    app:layout_constraintBottom_toBottomOf="@id/tvMotherLastNameW"
+                    app:layout_constraintStart_toEndOf="@id/guideline4"
+                    app:layout_constraintTop_toTopOf="@id/tvMotherLastNameW"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/tvEditMotherLastName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:inputType="textPersonName"
+                        android:autofillHints="name"
+                        android:textAllCaps="true"
+                        android:textColor="@color/blue"
+                        tools:ignore="LabelFor" />
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+                <ImageView
+                    android:id="@+id/separatorMotherLastNameW"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/cvEditMotherLastName"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvBirthdayW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/fecha_de_nacimiento"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorMotherLastNameW" />
+
+                <TextView
+                    android:id="@+id/tvDisplayedBirthdayW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    app:layout_constraintBottom_toBottomOf="@id/tvBirthdayW"
+                    app:layout_constraintStart_toEndOf="@id/guideline4"
+                    app:layout_constraintTop_toTopOf="@id/tvBirthdayW" />
+
+                <ImageView
+                    android:id="@+id/separatorBirthdayW"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/tvBirthdayW"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvDocumentW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/tipo_y_n_de_documento"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorBirthdayW"/>
+
+                <Spinner
+                    android:id="@+id/tvSpinnerDocumentType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    app:layout_constraintTop_toTopOf="@id/tvDocumentW"
+                    app:layout_constraintBottom_toBottomOf="@id/tvDocumentW"
+                    app:layout_constraintStart_toEndOf="@id/guideline4" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    app:strokeWidth="1dp"
+                    android:id="@+id/cvEditDocument"
+                    app:strokeColor="@color/grayLight"
+                    app:layout_constraintBottom_toBottomOf="@id/tvDocumentW"
+                    app:layout_constraintStart_toEndOf="@id/tvSpinnerDocumentType"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginStart="4dp"
+                    app:layout_constraintTop_toTopOf="@id/tvDocumentW"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/tvEditDocument"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:inputType="number"
+                        android:importantForAutofill="no"
+                        android:textAllCaps="true"
+                        android:textColor="@color/blue"
+                        tools:ignore="LabelFor" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+                <ImageView
+                    android:id="@+id/separatorDocumentW"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/cvEditDocument"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvBiologicalSexW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/sexo_biologico"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorDocumentW"/>
+
+                <Spinner
+                    android:id="@+id/tv_spinner_biological_sex"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    app:layout_constraintBottom_toBottomOf="@id/tvBiologicalSexW"
+                    app:layout_constraintStart_toEndOf="@id/guideline4"
+                    app:layout_constraintTop_toTopOf="@id/tvBiologicalSexW" />
+
+                <ImageView
+                    android:id="@+id/separatorBiologicalSexW"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/tvBiologicalSexW"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvGenderW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:maxWidth="130dp"
+                    android:text="@string/g_nero"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separatorBiologicalSexW"/>
+
+                <Spinner
+                    android:id="@+id/tv_spinner_gender"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    app:layout_constraintBottom_toBottomOf="@id/tvGenderW"
+                    app:layout_constraintTop_toTopOf="@id/tvGenderW"
+                    app:layout_constraintStart_toEndOf="@id/guideline4"/>
+
+                <ImageView
+                    android:id="@+id/separatorGenderW"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="12dp"
+                    android:background="@color/grayLight"
+                    android:contentDescription="@string/todo"
+                    android:src="@android:drawable/divider_horizontal_bright"
+                    app:layout_constraintTop_toBottomOf="@id/tvGenderW"
+                    tools:ignore="ImageContrastCheck" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:id="@+id/miniCards"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_margin="12dp"
+                    app:layout_constraintTop_toBottomOf="@id/separatorGenderW"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:orientation="horizontal"
+                    android:layout_height="48dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:id="@+id/btnCancel"
+                        app:cardBackgroundColor="@color/white"
+                        app:strokeColor="@color/gray"
+                        android:layout_margin="4dp"
+                        app:strokeWidth="0.4dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="@string/cancelar"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginStart="48dp"
+                            android:layout_marginEnd="48dp"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/blue"
+                            android:layout_height="wrap_content" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        app:strokeColor="@color/gray"
+                        app:cardBackgroundColor="@color/blue"
+                        android:id="@+id/btnSave"
+                        android:layout_margin="4dp"
+                        app:strokeWidth="0.4dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="@string/guardar"
+                            android:textStyle="bold"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginStart="48dp"
+                            android:layout_marginEnd="48dp"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/white"
+                            android:layout_height="wrap_content"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

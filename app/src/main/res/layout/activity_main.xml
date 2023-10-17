@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/dlHome"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_alignParentTop="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="60dp"
+            android:background="@color/blue"
+            android:id="@+id/toolbarHome">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/white"
+                android:id="@+id/tvTitleFragment"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:textColor="@color/white"
+                android:id="@+id/tvToolbarWelcomeUser"
+                android:layout_gravity="end|center_horizontal"
+                android:layout_height="wrap_content"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:src="@drawable/baseline_settings_24"
+                android:background="@null"
+                android:contentDescription="@string/todo"
+                android:id="@+id/btnNotificationsSettings"
+                android:layout_gravity="end|center_horizontal"
+                android:visibility="gone"
+                android:layout_marginEnd="20dp"
+                android:layout_height="wrap_content"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+            android:layout_width="match_parent"
+            android:id="@+id/ivCarousel"
+            android:layout_below="@id/toolbarHome"
+            app:layout_constraintTop_toBottomOf="@id/toolbarHome"
+            android:layout_height="250dp"/>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:id="@+id/pbCardsViews"
+            android:layout_below="@id/ivCarousel"
+            android:indeterminate="true"
+            android:indeterminateTint="#14769D"
+            android:layout_above="@id/bottomNavigationView"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_below="@id/ivCarousel"
+            android:orientation="vertical"
+            android:id="@+id/llCardsViews"
+            android:layout_above="@id/bottomNavigationView"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:id="@+id/cvAppointmentsAhead"
+                android:layout_margin="24dp"
+                android:visibility="gone"
+                app:cardElevation="30dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/blue"
+                        android:drawablePadding="12dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/pr_ximos_turnos"
+                        android:textStyle="bold"
+                        android:layout_margin="12dp"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_height="wrap_content"
+                        app:drawableStartCompat="@drawable/baseline_event_24" />
+
+                    <ImageView
+                        android:id="@+id/separator"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grayLight"
+                        android:contentDescription="@string/todo"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:src="@android:drawable/divider_horizontal_bright"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:id="@+id/rvAppointmentsAhead"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:orientation="vertical"
+                        tools:listitem="@layout/item_appointments_ahead_and_latest_medical_test_main_activity"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:id="@+id/cvLatestMedicalTest"
+                android:layout_margin="24dp"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                app:cardElevation="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/blue"
+                        android:drawablePadding="12dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/ultimos_resultados_de_estudios"
+                        android:textStyle="bold"
+                        android:layout_margin="12dp"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_height="wrap_content"
+                        app:drawableStartCompat="@drawable/baseline_description_24" />
+
+                    <ImageView
+                        android:id="@+id/separator2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grayLight"
+                        android:contentDescription="@string/todo"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:src="@android:drawable/divider_horizontal_bright"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:id="@+id/rvLatestMedicalTest"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_appointments_ahead_and_latest_medical_test_main_activity"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+
+
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:id="@+id/fullContainer"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:layout_height="match_parent"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:id="@+id/mainContainer"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="60dp"
+            android:layout_height="match_parent"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:id="@+id/newsContainer"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:elevation="8dp"
+            android:layout_height="match_parent"/>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="match_parent"
+            app:elevation="2dp"
+            android:layout_alignParentBottom="true"
+            app:itemTextColor="@drawable/bottom_nav_item_color"
+            app:itemIconTint="@drawable/bottom_nav_item_color"
+            app:itemRippleColor="@color/blue"
+            app:itemIconSize="18dp"
+            android:background="@color/white"
+            android:textAlignment="center"
+            app:labelVisibilityMode="labeled"
+            app:itemHorizontalTranslationEnabled="true"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/bottom_menu"
+            tools:ignore="VisualLintBottomNav" />
+
+
+    </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_gravity="start"
+        android:id="@+id/nv_home"
+        app:menu="@menu/drawer_menu"
+        style="@style/NavigationViewStyle"
+        app:itemTextAppearance="@style/NavigationViewTextAppearance"
+        app:headerLayout="@layout/nav_header"
+        android:layout_height="match_parent"
+        tools:ignore="VisualLintBounds" >
+
+        <include
+            android:layout_gravity="bottom"
+            layout="@layout/nav_footer"
+            android:layout_marginBottom="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>

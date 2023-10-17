@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".fragments.VideoCallsAdvice">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarSearchAndList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-2dp"
+        android:background="@color/blue"
+        tools:ignore="VisualLintBounds">
+
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:background="@null"
+            android:contentDescription="@string/todo"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:src="@drawable/baseline_arrow_back_ios_24"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/informaci_n_importante"
+            android:textStyle="bold"
+            android:id="@+id/tvToolbar"
+            android:textColor="@color/white" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/llTexts"
+        android:layout_below="@id/toolbarSearchAndList"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/video_call_text_1"
+            android:layout_margin="8dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            tools:ignore="VisualLintLongText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/video_call_text_2"
+            android:layout_margin="8dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/video_call_text_3"
+            android:layout_margin="8dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            tools:ignore="VisualLintLongText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/video_call_text_4"
+            android:layout_margin="8dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/video_call_text_5"
+            android:layout_margin="8dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            tools:ignore="VisualLintLongText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/video_call_text_6"
+            android:layout_margin="8dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            tools:ignore="VisualLintLongText" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:id="@+id/cvContainer"
+        app:cardElevation="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        app:strokeWidth="0.5dp"
+        app:strokeColor="@color/grayLight"
+        app:cardBackgroundColor="@color/white"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_margin="24dp"
+            android:id="@+id/btnNextStep"
+            app:cardBackgroundColor="@color/blue"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="@string/continuar"
+                android:layout_gravity="center"
+                android:layout_margin="12dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/llAnnounceStep"
+        android:layout_below="@id/toolbarSearchAndList"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="12dp"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:textColor="@color/blue"
+            android:textSize="18sp"
+            android:id="@+id/tvTitle"
+            android:text="@string/turnos_de_atenci_n_instant_nea"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_below="@id/tvTitle"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="12dp"
+            android:id="@+id/tvText1"
+            android:text="@string/este_consultorio_esta_disponible_de_lunes_a_lunes_de_8_00_a_18_59hs_fuera_de_ese_horario_acercate_a_guardia_central_per_n_4196_almagro_caba"
+            android:layout_height="wrap_content"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:id="@+id/cvContainerAnnounce"
+            app:cardElevation="30dp"
+            app:strokeWidth="0.5dp"
+            android:layout_below="@id/tvText1"
+            android:layout_margin="12dp"
+            app:strokeColor="@color/grayLight"
+            app:cardBackgroundColor="@color/white"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_margin="24dp"
+                android:id="@+id/btnAnnounce"
+                android:alpha="0.5"
+                app:cardBackgroundColor="@color/blue"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/anunciarte"
+                    android:layout_gravity="center"
+                    android:layout_margin="12dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_below="@id/cvContainerAnnounce"
+            android:id="@+id/tvText2"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="12dp"
+            android:text="@string/en_caso_de_no_necesitar_atenci_n_por_guardia_virtual_te_pedimos_por_favor_que_no_te_anuncies_asi_queda_disponible_para_otros_pacientes"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:layout_below="@id/tvText2"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="36dp"
+            android:id="@+id/tvText3"
+            android:text="@string/en_este_video_te_mostramos_los_pasos_de_c_mo_ser_tu_consulta_en_guardia_virtual"
+            android:layout_height="wrap_content"/>
+
+        <WebView
+            android:layout_width="match_parent"
+            android:id="@+id/webView"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="4dp"
+            android:layout_below="@id/tvText3"
+            android:layout_alignParentBottom="true"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

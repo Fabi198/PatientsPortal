@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragmentsBottomMenu.NotificationsSettingsFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:background="@color/blue"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/baseline_arrow_back_ios_24"
+            tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:text="@string/configurar_notificaciones"
+            android:layout_height="wrap_content"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/llCardsViews"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_margin="24dp"
+            android:text="@string/recibir_notificaciones_de"
+            android:layout_height="wrap_content"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:id="@+id/cvMedicalTest"
+            android:layout_marginBottom="4dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="24dp"
+                    android:id="@+id/ivMT"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/baseline_description_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_height="24dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="24dp"
+                    android:id="@+id/tvMTTitle"
+                    android:text="@string/estudios"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/blue"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/ivMT"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:id="@+id/tvMTDescription"
+                    android:textColor="@color/blue"
+                    android:text="@string/solicitudes_y_nuevos_resultados"
+                    app:layout_constraintTop_toBottomOf="@id/tvMTTitle"
+                    app:layout_constraintBottom_toTopOf="@id/tvMTEnabledOptions"
+                    app:layout_constraintStart_toEndOf="@+id/ivMT"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tvMTEnabledOptions"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="24dp"
+                    android:singleLine="true"
+                    android:maxWidth="260dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/push_aviso_en_el_celular_correo_electr_nico"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ivMT"
+                    android:layout_height="wrap_content"/>
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:contentDescription="@string/todo"
+                    android:background="@null"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/baseline_keyboard_arrow_right_24"
+                    android:layout_height="wrap_content"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:id="@+id/cvDrugs"
+            android:layout_marginBottom="4dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="24dp"
+                    android:id="@+id/ivDrugs"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/icon_drugs"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_height="24dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="24dp"
+                    android:id="@+id/tvDrugsTitle"
+                    android:text="@string/medicamentos"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/blue"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/ivDrugs"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:id="@+id/tvDrugsDescription"
+                    android:textColor="@color/blue"
+                    android:text="@string/renovaci_n_y_vencimiento_de_recetas"
+                    app:layout_constraintTop_toBottomOf="@id/tvDrugsTitle"
+                    app:layout_constraintBottom_toTopOf="@id/tvDrugsEnabledOptions"
+                    app:layout_constraintStart_toEndOf="@+id/ivDrugs"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tvDrugsEnabledOptions"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="24dp"
+                    android:singleLine="true"
+                    android:maxWidth="260dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/push_aviso_en_el_celular_correo_electr_nico"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ivDrugs"
+                    android:layout_height="wrap_content"/>
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:contentDescription="@string/todo"
+                    android:background="@null"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/baseline_keyboard_arrow_right_24"
+                    android:layout_height="wrap_content"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:id="@+id/cvDerivations"
+            android:layout_marginBottom="4dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="24dp"
+                    android:id="@+id/ivDeri"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/icon_doctors"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_height="24dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="24dp"
+                    android:id="@+id/tvDeriTitle"
+                    android:text="@string/derivaciones"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/blue"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/ivDeri"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:id="@+id/tvDeriDescription"
+                    android:textColor="@color/blue"
+                    android:text="@string/pr_ximas_a_vencer_renovadas_o_eliminadas"
+                    app:layout_constraintTop_toBottomOf="@id/tvDeriTitle"
+                    app:layout_constraintBottom_toTopOf="@id/tvDeriEnabledOptions"
+                    app:layout_constraintStart_toEndOf="@+id/ivDeri"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tvDeriEnabledOptions"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="24dp"
+                    android:singleLine="true"
+                    android:maxWidth="260dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/push_aviso_en_el_celular_correo_electr_nico"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ivDeri"
+                    android:layout_height="wrap_content"/>
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:contentDescription="@string/todo"
+                    android:background="@null"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/baseline_keyboard_arrow_right_24"
+                    android:layout_height="wrap_content"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:id="@+id/cvPatientsPortal"
+            android:layout_marginBottom="4dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="24dp"
+                    android:id="@+id/ivPP"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/icon_main"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_height="24dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="24dp"
+                    android:id="@+id/tvPPTitle"
+                    android:text="@string/portal_de_salud"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/blue"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/ivPP"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:id="@+id/tvPPDescription"
+                    android:textColor="@color/blue"
+                    android:maxWidth="270dp"
+                    android:text="@string/convocatorias_avisos_de_cortes_del_sistema_nuevas_funcionalidades"
+                    app:layout_constraintTop_toBottomOf="@id/tvPPTitle"
+                    app:layout_constraintBottom_toTopOf="@id/tvPPEnabledOptions"
+                    app:layout_constraintStart_toEndOf="@+id/ivPP"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tvPPEnabledOptions"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="24dp"
+                    android:singleLine="true"
+                    android:maxWidth="260dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/push_aviso_en_el_celular"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ivPP"
+                    android:layout_height="wrap_content"/>
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:contentDescription="@string/todo"
+                    android:background="@null"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/baseline_keyboard_arrow_right_24"
+                    android:layout_height="wrap_content"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/clEditView"
+        android:visibility="gone"
+        android:layout_margin="24dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="@string/activar_notificaciones"
+            android:id="@+id/tvEnableNoti"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_height="wrap_content"/>
+
+        <Switch
+            android:layout_width="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/tvEnableNoti"
+            app:layout_constraintBottom_toBottomOf="@id/tvEnableNoti"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/swEnableNoti"
+            android:layout_height="wrap_content"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <ImageView
+            android:id="@+id/separatorEnableNoti"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grayLight"
+            android:layout_marginTop="4dp"
+            android:contentDescription="@string/todo"
+            android:src="@android:drawable/divider_horizontal_bright"
+            app:layout_constraintTop_toBottomOf="@+id/swEnableNoti"
+            tools:ignore="ImageContrastCheck" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:id="@+id/cl_other_options"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/separatorEnableNoti"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:text="@string/push"
+                android:id="@+id/tvPushNoti"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:text="@string/aviso_en_el_celular"
+                android:id="@+id/tvPushDescNoti"
+                app:layout_constraintTop_toBottomOf="@id/tvPushNoti"
+                app:layout_constraintStart_toStartOf="@id/tvPushNoti"
+                android:layout_height="wrap_content"/>
+
+            <Switch
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/tvPushNoti"
+                app:layout_constraintBottom_toBottomOf="@id/tvPushDescNoti"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/swPushNoti"
+                android:layout_height="wrap_content"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <ImageView
+                android:id="@+id/separatorPushNoti"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grayLight"
+                android:layout_marginTop="4dp"
+                android:contentDescription="@string/todo"
+                android:src="@android:drawable/divider_horizontal_bright"
+                app:layout_constraintTop_toBottomOf="@+id/tvPushDescNoti"
+                tools:ignore="ImageContrastCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:text="@string/correo_electr_nico"
+                android:id="@+id/tvEmailNoti"
+                app:layout_constraintTop_toBottomOf="@id/separatorPushNoti"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:maxWidth="300dp"
+                android:text="@string/este_es_el_mail_que_verificamos_y_al_que_nos_comunicaremos_nachijoleo_yahoo_com_ar"
+                android:id="@+id/tvEmailDescNoti"
+                app:layout_constraintTop_toBottomOf="@id/tvEmailNoti"
+                app:layout_constraintStart_toStartOf="@id/tvEmailNoti"
+                android:layout_height="wrap_content"/>
+
+            <Switch
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/tvEmailNoti"
+                app:layout_constraintBottom_toBottomOf="@id/tvEmailDescNoti"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/swEmailNoti"
+                android:layout_height="wrap_content"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <ImageView
+                android:id="@+id/separatorEmailNoti"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grayLight"
+                android:layout_marginTop="4dp"
+                android:contentDescription="@string/todo"
+                android:src="@android:drawable/divider_horizontal_bright"
+                app:layout_constraintTop_toBottomOf="@+id/tvEmailDescNoti"
+                tools:ignore="ImageContrastCheck" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:id="@+id/clReminders"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/cl_other_options"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/blue"
+                android:text="@string/recordatorios"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="18dp"
+                android:id="@+id/tvReminder"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:id="@+id/reminderOne"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/tvReminder"
+                android:layout_marginTop="24dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="25"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="@string/avisame"
+                    android:layout_height="wrap_content"
+                    tools:ignore="RtlCompat" />
+
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_weight="25"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/countSelecterOne"
+                    android:layout_height="wrap_content"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="25"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/d_as_antes"
+                    android:layout_height="wrap_content"
+                    tools:ignore="RtlCompat" />
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_weight="25"
+                    android:src="@drawable/baseline_clear_24"
+                    android:background="@null"
+                    android:contentDescription="@string/todo"
+                    android:id="@+id/btnEraseItemOne"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:id="@+id/reminderTwo"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/reminderOne"
+                android:layout_marginTop="24dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="25"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="@string/avisame"
+                    android:layout_height="wrap_content"
+                    tools:ignore="RtlCompat" />
+
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_weight="25"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/countSelecterTwo"
+                    android:layout_height="wrap_content"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="25"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/d_as_antes"
+                    android:layout_height="wrap_content"
+                    tools:ignore="RtlCompat" />
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_weight="25"
+                    android:src="@drawable/baseline_clear_24"
+                    android:background="@null"
+                    android:contentDescription="@string/todo"
+                    android:id="@+id/btnEraseItemTwo"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:id="@+id/reminderThree"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/reminderTwo"
+                android:layout_marginTop="24dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="25"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="@string/avisame"
+                    android:layout_height="wrap_content"
+                    tools:ignore="RtlCompat" />
+
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_weight="25"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/countSelecterThree"
+                    android:layout_height="wrap_content"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="25"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/d_as_antes"
+                    android:layout_height="wrap_content"
+                    tools:ignore="RtlCompat" />
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_weight="25"
+                    android:src="@drawable/baseline_clear_24"
+                    android:background="@null"
+                    android:contentDescription="@string/todo"
+                    android:id="@+id/btnEraseItemThree"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:id="@+id/reminderFour"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/reminderThree"
+                android:layout_marginTop="24dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="25"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="@string/avisame"
+                    android:layout_height="wrap_content"
+                    tools:ignore="RtlCompat" />
+
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_weight="25"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/countSelecterFour"
+                    android:layout_height="wrap_content"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="25"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/d_as_antes"
+                    android:layout_height="wrap_content"
+                    tools:ignore="RtlCompat" />
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_weight="25"
+                    android:src="@drawable/baseline_clear_24"
+                    android:background="@null"
+                    android:contentDescription="@string/todo"
+                    android:id="@+id/btnEraseItemFour"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:id="@+id/reminderFive"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/reminderFour"
+                android:layout_marginTop="24dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="25"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="@string/avisame"
+                    android:layout_height="wrap_content"
+                    tools:ignore="RtlCompat" />
+
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_weight="25"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/countSelecterFive"
+                    android:layout_height="wrap_content"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="25"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/d_as_antes"
+                    android:layout_height="wrap_content"
+                    tools:ignore="RtlCompat" />
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_weight="25"
+                    android:src="@drawable/baseline_clear_24"
+                    android:background="@null"
+                    android:contentDescription="@string/todo"
+                    android:id="@+id/btnEraseItemFive"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_marginTop="24dp"
+                android:id="@+id/btnAddReminder"
+                app:layout_constraintTop_toBottomOf="@id/reminderFive"
+                app:cardBackgroundColor="@color/blue"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:text="@string/agregar_recordatorio"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="12dp"
+                    android:layout_margin="12dp"
+                    android:layout_height="wrap_content"
+                    app:drawableStartCompat="@drawable/baseline_add_24" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragmentsDrawerMenu.buyGoodDrugsSteps.BuyGoodDrugsStep3">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:id="@+id/svContainer"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_margin="12dp"
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="0">
+
+                <!-- La primera fila -->
+                <TableRow
+                    android:id="@+id/row1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.1"
+                        android:textAlignment="center"
+                        android:singleLine="true"
+                        android:textSize="16sp"
+                        android:layout_margin="8dp"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:textSize="16sp"
+                        android:layout_margin="8dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.3"
+                        android:text="@string/pago_tarjeta"
+                        android:textSize="16sp"
+                        android:layout_margin="8dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <!-- Las filas dinámicas se agregarán programáticamente -->
+
+                <!-- Costo por servicio -->
+                <TableRow
+                    android:id="@+id/costoServicioRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.1"
+                        android:textAlignment="center"
+                        android:singleLine="true"
+                        android:textSize="16sp"
+                        android:layout_margin="8dp"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:textColor="@color/black"
+                        android:text="@string/costo_por_servicio"
+                        android:layout_margin="8dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.3"
+                        android:id="@+id/tv_service_cost"
+                        android:layout_margin="8dp"
+                        android:textColor="@color/black" />
+                </TableRow>
+
+                <!-- Total -->
+                <TableRow
+                    android:id="@+id/totalRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.1"
+                        android:textAlignment="center"
+                        android:singleLine="true"
+                        android:textSize="16sp"
+                        android:layout_margin="8dp"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:text="@string/total_"
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_total"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.3"
+                        android:layout_margin="8dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </TableRow>
+            </TableLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_below="@id/tableLayout"
+                android:layout_margin="12dp"
+                app:strokeColor="@color/blue"
+                app:strokeWidth="1dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_margin="12dp"
+                        android:id="@+id/tvPlace"
+                        android:drawablePadding="16dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content"
+                        app:drawableStartCompat="@drawable/baseline_place_24" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_margin="12dp"
+                        android:id="@+id/tvCellphone"
+                        android:drawablePadding="16dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content"
+                        app:drawableStartCompat="@drawable/baseline_call_24" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_margin="12dp"
+                        android:textColor="@color/black"
+                        android:id="@+id/tvHour"
+                        android:drawablePadding="16dp"
+                        android:gravity="center_vertical"
+                        android:layout_height="wrap_content"
+                        app:drawableStartCompat="@drawable/outline_watch_later_24_green"
+                        app:drawableTint="@color/blue" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_margin="12dp"
+                        android:textColor="@color/black"
+                        android:id="@+id/tvDate"
+                        android:drawablePadding="16dp"
+                        android:gravity="center_vertical"
+                        android:layout_height="wrap_content"
+                        app:drawableStartCompat="@drawable/baseline_event_24" />
+
+
+                </LinearLayout>
+
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:id="@+id/cvContainer"
+        app:cardElevation="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        app:strokeWidth="0.5dp"
+        app:strokeColor="@color/grayLight"
+        app:cardBackgroundColor="@color/white"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/btnPayment"
+                app:cardBackgroundColor="@color/blue"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/realizar_pago"
+                    android:layout_gravity="center"
+                    android:layout_margin="12dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:id="@+id/tvBtnSelectPlace"
+                    android:layout_height="wrap_content"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/blue"
+                app:layout_constraintTop_toBottomOf="@id/btnPayment"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/btnCancel"
+                app:cardBackgroundColor="@color/white"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/cancelar_compra"
+                    android:layout_gravity="center"
+                    android:layout_margin="12dp"
+                    android:textColor="@color/blue"
+                    android:textStyle="bold"
+                    android:id="@+id/tvBtnAddMoreProducts"
+                    android:layout_height="wrap_content"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

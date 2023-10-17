@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardBackgroundColor="@color/blueLight"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_margin="12dp"
+                android:layout_alignParentTop="true"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:id="@+id/tvName"
+                android:layout_height="wrap_content"/>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_margin="4dp"
+                android:id="@+id/cvMain"
+                android:layout_below="@id/tvName"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <CheckBox
+                        android:id="@+id/cbMainDrug"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@id/tvNoStock"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvDrugProduct"
+                        tools:ignore="TouchTargetSizeCheck,VisualLintBounds" />
+
+                    <TextView
+                        android:id="@+id/tvDrugProduct"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toEndOf="@id/cbMainDrug"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textColor="@color/black"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toEndOf="@id/cbMainDrug"
+                        app:layout_constraintTop_toBottomOf="@id/tvDrugProduct" />
+
+                    <TextView
+                        android:id="@+id/tvQuantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textColor="@color/black"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/spinnerQuantity"
+                        app:layout_constraintStart_toEndOf="@id/cbMainDrug" />
+
+                    <Spinner
+                        android:id="@+id/spinnerQuantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:minHeight="48dp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvPrice" />
+
+                    <TextView
+                        android:id="@+id/tvNoStock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:drawablePadding="12dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/sin_stock_disponible"
+                        android:textColor="@color/red"
+                        android:visibility="gone"
+                        app:drawableStartCompat="@drawable/baseline_error_outline_24"
+                        app:layout_constraintBottom_toTopOf="@id/guideline5"
+                        app:layout_constraintStart_toEndOf="@id/cbMainDrug"
+                        app:layout_constraintTop_toBottomOf="@id/spinnerQuantity" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="invisible"
+                        app:layout_constraintGuide_begin="50dp" />
+
+                    <TextView
+                        android:id="@+id/tvAlternativeDrug"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:text="@string/otras_marcas_comerciales"
+                        android:textColor="@color/blue"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvNoStock" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvAlternativeDrugs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvAlternativeDrug"
+                        tools:itemCount="2" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnShowHideAlterDrugs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/cbMainDrug"
+                        app:layout_constraintTop_toBottomOf="@id/rvAlternativeDrugs"
+                        app:strokeColor="@color/blue"
+                        app:strokeWidth="1dp">
+
+                        <TextView
+                            android:id="@+id/tvShowAlterDrugs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="8dp"
+                            android:drawablePadding="4dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/mostrar_marcas_comerciales"
+                            android:textColor="@color/blue"
+                            android:visibility="visible"
+                            app:drawableEndCompat="@drawable/baseline_keyboard_arrow_right_24" />
+
+                        <TextView
+                            android:id="@+id/tvHideAlternativeDrug"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="8dp"
+                            android:drawablePadding="4dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/ocultar_marcas_comerciales"
+                            android:textColor="@color/blue"
+                            android:visibility="gone"
+                            app:drawableEndCompat="@drawable/baseline_keyboard_arrow_down_24" />
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.MedicalTestResultDisplayer">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/blue"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/detalle_del_estudio"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_gravity="end"
+            android:background="@null"
+            android:id="@+id/btnShare"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/outline_share_24"
+            android:padding="12dp"
+            android:layout_height="wrap_content"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
