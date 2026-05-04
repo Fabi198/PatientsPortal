@@ -2,7 +2,7 @@
   <div style="display: inline-flex; align-items: center; gap: 10px;">
     <img src="https://raw.githubusercontent.com/Fabi198/fabi198.github.io/main/assets/patients_portal/logo_main.webp"
          width="60" />
-    <h1 style="margin: 0;">Patients Portal App</h1>
+    <h1 style="margin: 0;">Portal de Pacientes</h1>
   </div>
 </div>
 
